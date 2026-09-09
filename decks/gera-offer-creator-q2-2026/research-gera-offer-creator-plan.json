@@ -1,0 +1,1044 @@
+{
+  "deck_metadata": {
+    "title": "Offer management is a system problem",
+    "purpose": "Benchmark Gera, VTEX, Yalo, TudoFarma, and BEES Offer Creator",
+    "method": "Desk research and capability benchmark",
+    "sample": "4 external players + BEES Offer Creator",
+    "period": "Q2 2026",
+    "eyebrow": "RESEARCH / BEES ONE / OFFER CREATOR",
+    "subtitle": "What posture should BEES take toward promotion orchestration?",
+    "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+    "source_url": "https://ab-inbev.atlassian.net/wiki/spaces/BEESPKM/pages/6198329781",
+    "reference_ids": [
+      "gera-offer-creator-benchmark-q2-2026"
+    ],
+    "executive_summary": "The benchmark shifts the question from improving Offer Creator usability to deciding how BEES should participate in a broader promotion-orchestration ecosystem.",
+    "key_implications": [
+      "Gera combines promotion calendars, portfolio management, BI, distributor acceptance, and sales-force incentives.",
+      "BEES Offer Creator is a channel-native execution tool, but it does not replace a central orchestration layer.",
+      "VTEX and TudoFarma demonstrate faster or simpler native creation; Yalo demonstrates the value of a front-end conversational layer.",
+      "The strategic decision is whether BEES should integrate, compete, or explore a corporate transaction."
+    ]
+  },
+  "visual_inventory": [
+    "Executive signal: ecosystem-level promotion orchestration",
+    "Operating-model comparison: ERP-led, orchestrator, native channel",
+    "BEES Offer Creator 3-step workflow",
+    "Gera indirect-channel workflow",
+    "Full capability comparison matrix",
+    "VTEX promotion creation and audience model",
+    "TudoFarma bulk creation and editing flow",
+    "Gera API and sales-force integration flow",
+    "Direct selling versus manufacturer-to-retailer model",
+    "Partner x platform coverage matrix",
+    "Strategic options: integration, competition, acquisition",
+    "Evidence boundary and validation backlog"
+  ],
+  "slides": [
+    {
+      "layout": "template-cover",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Offer management is a system problem",
+      "eyebrow": "RESEARCH / BEES ONE / OFFER CREATOR",
+      "subtitle": "What posture should BEES take toward promotion orchestration?",
+      "metadata": [
+        "Desk research and capability benchmark",
+        "4 external players + BEES Offer Creator",
+        "Q2 2026"
+      ],
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-cover",
+      "composition_spec": {
+        "family": "template-cover",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-cover:1",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "5928a292e539fb78",
+      "plan_index": 1
+    },
+    {
+      "layout": "template-contents",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Contents",
+      "eyebrow": "Readout structure",
+      "items": [
+        {
+          "number": "01",
+          "title": "Offer management is a system problem, not only a tool problem",
+          "detail": "Promotions connect manufacturer strategy, distributor execution, sales-rep incentives, channel visibility, and ROI."
+        },
+        {
+          "number": "02",
+          "title": "The benchmark compares four operating models around promotion execution",
+          "detail": "The right solution depends on who owns rules, integration, execution, and measurement."
+        },
+        {
+          "number": "03",
+          "title": "Gera is the only benchmarked player positioned as a full indirect-channel orchestrator",
+          "detail": "The differentiation is not offer creation alone; it is coordination across actors and systems."
+        },
+        {
+          "number": "04",
+          "title": "BEES Offer Creator is useful where the channel is the execution surface",
+          "detail": "The native tool remains relevant, but its boundaries become visible when partners run multiple systems."
+        },
+        {
+          "number": "05",
+          "title": "The current Offer Creator workflow stops at offer publication",
+          "detail": "The missing visibility is what happens across ERP, distributor, sales force, and performance systems."
+        },
+        {
+          "number": "06",
+          "title": "Gera’s strength is the connected commercial loop",
+          "detail": "Its promise spans planning, eligibility, distributor governance, field execution, and analytics."
+        }
+      ],
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-contents",
+      "composition_spec": {
+        "family": "template-contents",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-contents:2",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "b28f98006e7db6a1",
+      "plan_index": 2
+    },
+    {
+      "layout": "template-executive-summary",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Executive summary",
+      "eyebrow": "Executive readout",
+      "claim": "The benchmark shifts the question from improving Offer Creator usability to deciding how BEES should participate in a broader promotion-orchestration ecosystem.",
+      "implications": [
+        "Gera combines promotion calendars, portfolio management, BI, distributor acceptance, and sales-force incentives.",
+        "BEES Offer Creator is a channel-native execution tool, but it does not replace a central orchestration layer.",
+        "VTEX and TudoFarma demonstrate faster or simpler native creation; Yalo demonstrates the value of a front-end conversational layer.",
+        "The strategic decision is whether BEES should integrate, compete, or explore a corporate transaction."
+      ],
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-executive-summary",
+      "composition_spec": {
+        "family": "template-executive-summary",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-executive-summary:0",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "44fb6a9c90d9230d",
+      "plan_index": 3
+    },
+    {
+      "layout": "template-section-divider",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Research evidence",
+      "eyebrow": "Findings and assessment",
+      "framing": "What the research revealed and what it means.",
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-section-divider",
+      "composition_spec": {
+        "family": "template-section-divider",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-section-divider:1",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "d08a9b0eb94830d9",
+      "plan_index": 4
+    },
+    {
+      "intent": "insight",
+      "composition": "evidence-synthesis",
+      "title": "Offer management is a system problem, not only a tool problem",
+      "takeaway": "Promotions connect manufacturer strategy, distributor execution, sales-rep incentives, channel visibility, and ROI.",
+      "evidence": [
+        "Gera combines promotion calendars, portfolio management, sales-force incentives, and BI.",
+        "BEES Offer Creator creates offers inside the BEES ecosystem but does not replace every upstream ERP or orchestration need.",
+        "Strategic partners may operate BEES, Gera, VTEX, Yalo, and ERP tools simultaneously."
+      ],
+      "recommendation": "Decide BEES posture at ecosystem level before expanding Offer Creator feature scope.",
+      "owner": "BEES One Product Leadership",
+      "source": "Research page 6198329781 · Executive Summary",
+      "layout": "evidence-synthesis",
+      "composition_spec": {
+        "family": "evidence-synthesis",
+        "zones": [
+          "claim",
+          "quote-or-evidence",
+          "implication"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "quote-cluster",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "evidence-synthesis:2",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "e4c9da293ca573ca",
+      "plan_index": 5
+    },
+    {
+      "intent": "process",
+      "composition": "method-boundary",
+      "title": "The benchmark compares four operating models around promotion execution",
+      "takeaway": "The right solution depends on who owns rules, integration, execution, and measurement.",
+      "columns": [
+        {
+          "number": "01",
+          "title": "ERP-led",
+          "bullets": [
+            "Centralized data and guardrails",
+            "Strong auditability",
+            "Harder indirect-channel integration"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Orchestrator",
+          "bullets": [
+            "Cross-system rules and governance",
+            "Distributor accept/reject workflow",
+            "Calendar, portfolio, BI, incentives"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Native channel tool",
+          "bullets": [
+            "Fast channel-specific execution",
+            "Simple for smaller scope",
+            "Fragments governance as footprint grows"
+          ]
+        }
+      ],
+      "boundary": "Desk research and public capability evidence; claims about delivery, latency, and usability require direct user or platform validation.",
+      "recommendation": "Use operating model as the primary comparison frame.",
+      "owner": "Research",
+      "source": "Research page 6198329781 · Context and operating models",
+      "layout": "method-boundary",
+      "composition_spec": {
+        "family": "method-boundary",
+        "zones": [
+          "method",
+          "sample",
+          "decision-boundary"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "three-part-method-rail",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "method-boundary:0",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "5fe88521fd80c6a0",
+      "plan_index": 6
+    },
+    {
+      "intent": "comparison",
+      "composition": "market-split",
+      "title": "Gera is the only benchmarked player positioned as a full indirect-channel orchestrator",
+      "takeaway": "The differentiation is not offer creation alone; it is coordination across actors and systems.",
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "BEES",
+          "Gera",
+          "VTEX",
+          "Yalo",
+          "TudoFarma"
+        ],
+        "series": [
+          {
+            "name": "Orchestration breadth",
+            "values": [
+              2,
+              5,
+              3,
+              1,
+              3
+            ]
+          }
+        ],
+        "source": "Research page 6198329781 · capability synthesis"
+      },
+      "evidence": [
+        "Gera: calendar, portfolio, BI, distributor workflow, sales-force incentives.",
+        "VTEX: native commerce promotions and integrations, but not indirect-channel specific.",
+        "Yalo: conversational front end; upstream systems provide promotion logic."
+      ],
+      "recommendation": "Treat Gera as a strategic ecosystem signal, not only as a feature benchmark.",
+      "owner": "BEES Product Strategy",
+      "source": "Research page 6198329781 · Summary of Findings",
+      "layout": "market-split",
+      "composition_spec": {
+        "family": "market-split",
+        "zones": [
+          "claim",
+          "market-chart",
+          "market-readout"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "market-callouts",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "market-split:1",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "edcf98196ace08c6",
+      "plan_index": 7
+    },
+    {
+      "intent": "insight",
+      "composition": "evidence-synthesis",
+      "title": "BEES Offer Creator is useful where the channel is the execution surface",
+      "takeaway": "The native tool remains relevant, but its boundaries become visible when partners run multiple systems.",
+      "evidence": [
+        "Five Brazilian partners are reported as current Offer Creator users.",
+        "Partners with existing promotion integrations may not need a separate native creator.",
+        "ERP price guardrails can cancel orders when BEES promotions are not reflected upstream."
+      ],
+      "recommendation": "Preserve native execution while defining a clear integration contract with upstream promotion owners.",
+      "owner": "BEES One Product",
+      "source": "Research page 6198329781 · About Offer Creator",
+      "layout": "evidence-synthesis",
+      "composition_spec": {
+        "family": "evidence-synthesis",
+        "zones": [
+          "claim",
+          "quote-or-evidence",
+          "implication"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "quote-cluster",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "evidence-synthesis:2",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "053455e4c5045947",
+      "plan_index": 8
+    },
+    {
+      "intent": "process",
+      "composition": "journey-use-case",
+      "title": "The current Offer Creator workflow stops at offer publication",
+      "takeaway": "The missing visibility is what happens across ERP, distributor, sales force, and performance systems.",
+      "use_cases": [
+        {
+          "number": "01",
+          "title": "Create",
+          "bullets": [
+            "Offer name and type",
+            "Period, audience, rules, benefit",
+            "Review and approve"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Publish",
+          "bullets": [
+            "Offer becomes visible in distributor stores",
+            "Execution depends on distributor integrations",
+            "ERP guardrails can still intervene"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Measure",
+          "bullets": [
+            "Budget and consumption visibility are limited",
+            "Errors and status are not consistently exposed",
+            "ROI loop is not unified"
+          ]
+        }
+      ],
+      "recommendation": "Add lifecycle status, upstream acknowledgement, budget visibility, and post-campaign performance to the product contract.",
+      "owner": "BEES One Product + Platform",
+      "source": "Research page 6198329781 · Offer Creator limitations",
+      "layout": "journey-use-case",
+      "composition_spec": {
+        "family": "journey-use-case",
+        "zones": [
+          "context-rail",
+          "use-case-nodes",
+          "principle"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "connected-use-cases",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "journey-use-case:0",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "5322f65bb0bad18c",
+      "plan_index": 9
+    },
+    {
+      "intent": "comparison",
+      "composition": "participant-signal",
+      "title": "Gera’s strength is the connected commercial loop",
+      "takeaway": "Its promise spans planning, eligibility, distributor governance, field execution, and analytics.",
+      "signals": [
+        {
+          "label": "Plan",
+          "detail": "Promotional calendars reportedly save up to 20 working days per cycle.",
+          "status": "supported",
+          "accent": "green"
+        },
+        {
+          "label": "Govern",
+          "detail": "Distributors can accept or reject campaigns before execution.",
+          "status": "supported",
+          "accent": "green"
+        },
+        {
+          "label": "Execute",
+          "detail": "Rules, quotas, and incentives reach sales-force workflows.",
+          "status": "supported",
+          "accent": "purple"
+        },
+        {
+          "label": "Measure",
+          "detail": "Gera Dados dashboards connect campaign and performance views.",
+          "status": "supported",
+          "accent": "green"
+        }
+      ],
+      "recommendation": "Validate Gera’s end-to-end delivery with a partner reference or controlled technical discovery.",
+      "owner": "BEES Partnerships + Research",
+      "source": "Research page 6198329781 · Gera indirect-channel findings",
+      "layout": "participant-signal",
+      "composition_spec": {
+        "family": "participant-signal",
+        "zones": [
+          "claim",
+          "signal-field",
+          "interpretation"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "signal-bars",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "participant-signal:1",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "c48f22aff5251ad5",
+      "plan_index": 10
+    },
+    {
+      "intent": "comparison",
+      "composition": "market-split",
+      "title": "The alternatives solve different parts of the problem",
+      "takeaway": "No competitor is a complete substitute for BEES; each reveals a different product opportunity.",
+      "evidence": [
+        "VTEX: faster single-screen creation, recurrence, and mature commerce integrations.",
+        "Yalo: conversational front end and recommendations, but no native promotion engine.",
+        "TudoFarma: fast bulk creation, distributor/state toggles, and simple pharma-specific UX."
+      ],
+      "recommendation": "Borrow patterns by job: orchestration from Gera, native speed from VTEX, reach from Yalo, and simplicity from TudoFarma.",
+      "owner": "BEES One Product Design",
+      "source": "Research page 6198329781 · VTEX, Yalo, and TudoFarma findings",
+      "layout": "market-split",
+      "composition_spec": {
+        "family": "market-split",
+        "zones": [
+          "claim",
+          "market-chart",
+          "market-readout"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "market-callouts",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "market-split:2",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "9e29f4737314b43e",
+      "plan_index": 11
+    },
+    {
+      "intent": "decision",
+      "composition": "hypothesis-scorecard",
+      "title": "The strategic choice is integration, competition, or acquisition",
+      "takeaway": "Each posture changes the time-to-value, control, and partner migration burden.",
+      "hypotheses": [
+        {
+          "hypothesis": "Integrate with Gera",
+          "status": "open",
+          "assessment": "Fastest path",
+          "evidence": "Preserves partner investment but introduces dependency and semantic gaps."
+        },
+        {
+          "hypothesis": "Build and compete",
+          "status": "partial",
+          "assessment": "Highest control",
+          "evidence": "Could unify the stack but requires long delivery and broad domain scope."
+        },
+        {
+          "hypothesis": "Explore acquisition",
+          "status": "open",
+          "assessment": "Strategic option",
+          "evidence": "Could absorb capabilities and relationships; feasibility and fit are unvalidated."
+        }
+      ],
+      "recommendation": "Run a time-boxed integration discovery before committing to build or M&A.",
+      "owner": "BEES Product Strategy + Corporate Development",
+      "source": "Research page 6198329781 · Conclusion and strategic considerations",
+      "layout": "hypothesis-scorecard",
+      "composition_spec": {
+        "family": "hypothesis-scorecard",
+        "zones": [
+          "decision",
+          "hypothesis-rows",
+          "follow-up"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "status-scorecard",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 6,
+        "variation_key": "hypothesis-scorecard:0",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "6bbfdfc8e9cc138f",
+      "plan_index": 12
+    },
+    {
+      "intent": "decision",
+      "composition": "decision-guardrail",
+      "title": "Start with an integration posture, guarded by evidence",
+      "takeaway": "The first decision should preserve partner momentum while testing whether Gera’s orchestration model fits BEES execution.",
+      "recommendation": "Define an API and operating-model discovery with Colgate or another shared partner.",
+      "guardrails": [
+        {
+          "label": "Keep",
+          "body": "BEES visibility before checkout and native marketplace execution."
+        },
+        {
+          "label": "Change",
+          "body": "Offer lifecycle, upstream acknowledgement, budget status, and partner workflow."
+        },
+        {
+          "label": "Watch",
+          "body": "Eligibility semantics, real-time sync, distributor adoption, and switching cost."
+        }
+      ],
+      "owner": "BEES Product Leadership",
+      "source": "Research page 6198329781 · evidence-based recommendation",
+      "layout": "decision-guardrail",
+      "composition_spec": {
+        "family": "decision-guardrail",
+        "zones": [
+          "decision",
+          "keep-change-watch",
+          "guardrail"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "decision-columns",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "decision-guardrail:1",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "ea1bf10e046f27e2",
+      "plan_index": 13
+    },
+    {
+      "intent": "comparison",
+      "composition": "evidence-synthesis",
+      "title": "The complete benchmark shows where BEES is strong, partial, or exposed.",
+      "takeaway": "The complete benchmark shows where BEES is strong, partial, or exposed.",
+      "evidence": [
+        "Research page 6198329781 · Summary of Findings"
+      ],
+      "recommendation": "Use the full capability matrix as the baseline for future product and partnership decisions.",
+      "owner": "BEES Product Strategy",
+      "source": "Research page 6198329781 · Summary of Findings",
+      "layout": "evidence-synthesis",
+      "composition_spec": {
+        "family": "evidence-synthesis",
+        "zones": [
+          "claim",
+          "quote-or-evidence",
+          "implication"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "quote-cluster",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "evidence-synthesis:2",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "e615e5d63f4c7739",
+      "plan_index": 14
+    },
+    {
+      "intent": "process",
+      "composition": "journey-use-case",
+      "title": "BEES Offer Creator is a three-step workflow with a thin post-publication loop.",
+      "takeaway": "BEES Offer Creator is a three-step workflow with a thin post-publication loop.",
+      "evidence": [
+        "Research page 6198329781 · Offer Creation 3-steps Workflow"
+      ],
+      "recommendation": "Define lifecycle status and handoffs across all three Offer Creator stages.",
+      "owner": "BEES One Product + Platform",
+      "source": "Research page 6198329781 · Offer Creation 3-steps Workflow",
+      "layout": "journey-use-case",
+      "composition_spec": {
+        "family": "journey-use-case",
+        "zones": [
+          "context-rail",
+          "use-case-nodes",
+          "principle"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "connected-use-cases",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "journey-use-case:0",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "6cafe6e2d63aa94b",
+      "plan_index": 15
+    },
+    {
+      "intent": "process",
+      "composition": "journey-use-case",
+      "title": "Gera extends promotion creation into distributor governance and field execution.",
+      "takeaway": "Gera extends promotion creation into distributor governance and field execution.",
+      "evidence": [
+        "Research page 6198329781 · Gera indirect-channel workflow"
+      ],
+      "recommendation": "Validate distributor acceptance, ERP synchronization, and sales-force execution in an end-to-end partner pilot.",
+      "owner": "BEES Partnerships + Platform",
+      "source": "Research page 6198329781 · Gera indirect-channel workflow",
+      "layout": "journey-use-case",
+      "composition_spec": {
+        "family": "journey-use-case",
+        "zones": [
+          "context-rail",
+          "use-case-nodes",
+          "principle"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "connected-use-cases",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "journey-use-case:1",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "speaker_notes": null,
+      "revision": "5ef6e1a47da9270f",
+      "plan_index": 16
+    },
+    {
+      "intent": "comparison",
+      "composition": "evidence-synthesis",
+      "title": "VTEX compresses creation into one commerce-admin surface.",
+      "takeaway": "VTEX compresses creation into one commerce-admin surface.",
+      "evidence": [
+        "Research page 6198329781 · VTEX Promotions Module"
+      ],
+      "recommendation": "Validate BEES and VTEX on creation speed, recurrence, audience logic, and channel fit.",
+      "owner": "BEES One Product Design + Platform",
+      "source": "Research page 6198329781 · VTEX Promotions Module",
+      "layout": "evidence-synthesis",
+      "composition_spec": {
+        "family": "evidence-synthesis",
+        "zones": [
+          "claim",
+          "quote-or-evidence",
+          "implication"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "quote-cluster",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "evidence-synthesis:2",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "a7cbdd0878b3286b",
+      "plan_index": 17
+    },
+    {
+      "intent": "comparison",
+      "composition": "evidence-synthesis",
+      "title": "TudoFarma wins on focused bulk operations and simple toggles.",
+      "takeaway": "TudoFarma wins on focused bulk operations and simple toggles.",
+      "evidence": [
+        "Research page 6198329781 · TudoFarma offer creation flow and comparison"
+      ],
+      "recommendation": "Validate bulk upload, multi-distributor toggles, and non-consecutive date patterns as reusable BEES patterns.",
+      "owner": "BEES One Product Design",
+      "source": "Research page 6198329781 · TudoFarma offer creation flow and comparison",
+      "layout": "evidence-synthesis",
+      "composition_spec": {
+        "family": "evidence-synthesis",
+        "zones": [
+          "claim",
+          "quote-or-evidence",
+          "implication"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "quote-cluster",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "evidence-synthesis:0",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "4826625223f7b2bc",
+      "plan_index": 18
+    },
+    {
+      "intent": "integration",
+      "composition": "journey-use-case",
+      "title": "The integration opportunity is technically plausible but semantically non-trivial.",
+      "takeaway": "The integration opportunity is technically plausible but semantically non-trivial.",
+      "evidence": [
+        "Research page 6198329781 · Gera integrations and strategic considerations"
+      ],
+      "recommendation": "Define Gera API responsibilities against BEES promotion visibility before committing to an integration design.",
+      "owner": "BEES Platform Architecture",
+      "source": "Research page 6198329781 · Gera integrations and strategic considerations",
+      "layout": "journey-use-case",
+      "composition_spec": {
+        "family": "journey-use-case",
+        "zones": [
+          "context-rail",
+          "use-case-nodes",
+          "principle"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "connected-use-cases",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 3,
+        "variation_key": "journey-use-case:1",
+        "visual_mode": "basics",
+        "reading_mode": "Familiar chart silhouette with disciplined units, ticks, rules, and editorial spacing."
+      },
+      "speaker_notes": null,
+      "revision": "a54cc6f7b585b1a8",
+      "plan_index": 19
+    },
+    {
+      "intent": "comparison",
+      "composition": "market-split",
+      "title": "“Direct” describes two different commercial systems in the report.",
+      "takeaway": "“Direct” describes two different commercial systems in the report.",
+      "evidence": [
+        "Research page 6198329781 · Appendix: Direct Sales in Brazil"
+      ],
+      "recommendation": "Define direct-selling evidence separately from BEES manufacturer-to-retailer requirements in future capability planning.",
+      "owner": "BEES Product Strategy",
+      "source": "Research page 6198329781 · Appendix: Direct Sales in Brazil",
+      "layout": "market-split",
+      "composition_spec": {
+        "family": "market-split",
+        "zones": [
+          "claim",
+          "market-chart",
+          "market-readout"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "market-callouts",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "market-split:2",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "1024d185b66f6fe9",
+      "plan_index": 20
+    },
+    {
+      "intent": "comparison",
+      "composition": "market-split",
+      "title": "Strategic partners already span multiple promotion ecosystems.",
+      "takeaway": "Strategic partners already span multiple promotion ecosystems.",
+      "evidence": [
+        "Research page 6198329781 · Partner × Platform Coverage Matrix"
+      ],
+      "recommendation": "Use partner coverage to prioritize integration discovery with shared accounts before broad platform investment.",
+      "owner": "BEES Product Strategy + Partnerships",
+      "source": "Research page 6198329781 · Partner × Platform Coverage Matrix",
+      "layout": "market-split",
+      "composition_spec": {
+        "family": "market-split",
+        "zones": [
+          "claim",
+          "market-chart",
+          "market-readout"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "bar",
+        "chart_backend": "native-drawingml",
+        "evidence_treatment": "market-callouts",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 4,
+        "variation_key": "market-split:0",
+        "visual_mode": "glance",
+        "reading_mode": "Fast judgment: large marks, explicit ranking, one dominant contrast, minimal annotation."
+      },
+      "speaker_notes": null,
+      "revision": "c51fa6d77e8f40a5",
+      "plan_index": 21
+    },
+    {
+      "layout": "template-closing",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Closing",
+      "eyebrow": "Decision and next validation",
+      "decision": "Use partner coverage to prioritize integration discovery with shared accounts before broad platform investment.",
+      "next_steps": [
+        "Validate the research implications quantitatively."
+      ],
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-closing",
+      "composition_spec": {
+        "family": "template-closing",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-closing:1",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "40197955ec4dccc0",
+      "plan_index": 22
+    },
+    {
+      "layout": "template-appendix",
+      "intent": "template",
+      "visual_mode": "lupi",
+      "title": "Appendix / sources",
+      "eyebrow": "Traceability",
+      "sections": [
+        {
+          "title": "Method",
+          "items": [
+            "Desk research and capability benchmark",
+            "4 external players + BEES Offer Creator"
+          ]
+        },
+        {
+          "title": "Source",
+          "items": [
+            "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+            "https://ab-inbev.atlassian.net/wiki/spaces/BEESPKM/pages/6198329781"
+          ]
+        },
+        {
+          "title": "Boundary",
+          "items": [
+            "Directional qualitative evidence",
+            "Validate scale and frequency quantitatively"
+          ]
+        }
+      ],
+      "source": "[Research] [One] Gera and Offer Creating Tools Benchmark | Q2 2026",
+      "composition": "template-appendix",
+      "composition_spec": {
+        "family": "template-appendix",
+        "zones": [
+          "narrative-scaffold"
+        ],
+        "emphasis": "claim-first",
+        "chart_type": "none",
+        "chart_backend": "native",
+        "evidence_treatment": "corpus-template",
+        "source_treatment": "small-traceability-caption",
+        "density_budget": 7,
+        "variation_key": "template-appendix:2",
+        "visual_mode": "lupi",
+        "reading_mode": "Editorial slow read: real units, hairlines, annotations, and visible exceptions."
+      },
+      "revision": "4078beb5effe9cf0",
+      "plan_index": 23
+    }
+  ],
+  "art_director": {
+    "version": "0.2",
+    "selection": "composition-first",
+    "data_policy": "render-only-supplied-data",
+    "reference_hints": [],
+    "visual_language": {
+      "name": "BEES research editorial",
+      "version": "0.1",
+      "reading_modes": [
+        "basics",
+        "glance",
+        "lupi"
+      ],
+      "pattern_ids": [
+        "claim-first",
+        "evidence-before-action",
+        "measured-signal",
+        "asymmetric-evidence",
+        "semantic-color",
+        "editorial-rule",
+        "method-boundary"
+      ]
+    },
+    "composition_families": [
+      "template-cover",
+      "template-contents",
+      "template-executive-summary",
+      "template-section-divider",
+      "evidence-synthesis",
+      "method-boundary",
+      "market-split",
+      "evidence-synthesis",
+      "journey-use-case",
+      "participant-signal",
+      "market-split",
+      "hypothesis-scorecard",
+      "decision-guardrail",
+      "evidence-synthesis",
+      "journey-use-case",
+      "journey-use-case",
+      "evidence-synthesis",
+      "evidence-synthesis",
+      "journey-use-case",
+      "market-split",
+      "market-split",
+      "template-closing",
+      "template-appendix"
+    ],
+    "story_arc": [
+      "template-cover",
+      "template-contents",
+      "template-executive-summary",
+      "template-section-divider",
+      "evidence-synthesis",
+      "method-boundary",
+      "market-split",
+      "evidence-synthesis",
+      "journey-use-case",
+      "participant-signal",
+      "market-split",
+      "hypothesis-scorecard",
+      "decision-guardrail",
+      "evidence-synthesis",
+      "journey-use-case",
+      "journey-use-case",
+      "evidence-synthesis",
+      "evidence-synthesis",
+      "journey-use-case",
+      "market-split",
+      "market-split",
+      "template-closing",
+      "template-appendix"
+    ]
+  },
+  "plan": {
+    "version": "0.1",
+    "deck_revision": "2b0d0df2eded7fbc",
+    "source_slide_count": 17,
+    "planned_slide_count": 23
+  }
+}
