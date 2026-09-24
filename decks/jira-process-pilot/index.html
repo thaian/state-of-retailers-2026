@@ -1,0 +1,1577 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="rds-build" content="2026-09-24T15:22Z">
+<title>A evidência de pesquisa deve mudar o trabalho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#fff500;--paper:#f7f7f4;--ink:#111;--muted:#68707a;--rule:#cbd4ea;
+  --signal:#ff8ad8;--positive:#adeee2;--attention:#ffdf6f;--negative:#ffc5c6;
+  --blue:#19c1d1;--purple:#a58cff;--dark:#050607;--gap:12px;--pad:42px;
+  --display:"Barlow Semi Condensed","Barlow","Arial Narrow",Arial,sans-serif;--body:"Work Sans","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:#090a0c;color:var(--ink)}
+body{font-family:var(--body);overflow:hidden}
+button{font:inherit}
+.deck{width:100vw;height:100vh;display:grid;place-items:center}
+.slide{
+  width:min(100vw,calc(100vh * 16 / 9));height:min(100vh,calc(100vw * 9 / 16));
+  padding:var(--pad);display:none;position:relative;overflow:hidden;background:var(--paper);
+  grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);gap:var(--gap);
+}
+.slide.active{display:grid}
+.slide:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--yellow);z-index:3}
+.slide:after{content:attr(data-number);position:absolute;right:var(--pad);bottom:18px;color:var(--muted);font:600 11px var(--body);letter-spacing:.1em}
+.eyebrow,.label,.source,.mono{font:600 12px var(--body);text-transform:uppercase;letter-spacing:.08em}
+.eyebrow{grid-column:1/span 12;grid-row:1;align-self:start}
+.source{position:absolute;left:var(--pad);bottom:18px;color:var(--muted);max-width:72%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:4}
+.deck-media{position:absolute;z-index:2;display:flex;gap:10px;align-items:flex-end;pointer-events:none}
+.deck-media__img{height:auto;max-height:96px;width:auto;object-fit:contain}
+.deck-media__img--accent{right:var(--pad);top:calc(var(--pad) + 4px);max-height:64px}
+.deck-media__img--ornament{right:8%;bottom:22%;max-height:140px;opacity:.95}
+.deck-media__img--inline{position:relative;max-height:120px}
+.slide.cover .deck-media{right:6%;bottom:18%;align-items:center}
+body.visual-capture .deck-nav,body.visual-capture .controls,body.visual-capture .progress,body.visual-capture .notes{display:none!important}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:600}
+h1{font-size:clamp(38px,5.2vw,86px);line-height:.88;letter-spacing:-.035em}
+h2{font-size:clamp(28px,3.35vw,58px);line-height:.91;letter-spacing:-.025em}
+h3{font-size:clamp(19px,1.8vw,30px);line-height:.98}
+.copy{font-size:clamp(16px,1.45vw,24px);line-height:1.18}
+.small{font-size:clamp(12px,1.05vw,17px);line-height:1.25}
+.tiny{font-size:clamp(10px,.82vw,13px);line-height:1.25}
+.label{display:block;margin-bottom:9px}
+.panel{padding:18px;min-width:0;min-height:0}
+.black{background:var(--ink);color:var(--paper)}
+.yellow{background:var(--yellow)}
+.mint{background:var(--positive)}
+.purple{background:var(--purple)}
+.pink{background:var(--signal)}
+.blue{background:var(--blue)}
+.soft{background:#e9edf8}
+.rule{border-top:1px solid currentColor;padding-top:10px}
+.accent{color:var(--purple)}
+.hero-mark{display:inline-flex;align-items:center;gap:9px;background:var(--paper);color:var(--ink);padding:8px 12px;font:700 21px var(--display);letter-spacing:.03em;width:max-content}
+.hero-mark i{display:block;width:20px;height:20px;background:var(--yellow);border-radius:50%;box-shadow:7px -5px 0 var(--ink)}
+.buttonish{border:1px solid currentColor;padding:6px 10px;font:600 12px var(--body);text-transform:uppercase;letter-spacing:.06em}
+
+/* Reference-inspired atmosphere, kept within BEES tokens. */
+.cover,.section{background:var(--dark);color:var(--paper)}
+.cover:after,.section:after{color:#a7adb7}
+.cover:before,.section:before{height:6px}
+.cover:after,.section:after{z-index:3}
+.signal-field{position:absolute;inset:-12%;background:var(--dark);transform:rotate(-8deg)}
+.signal-field:before{content:"";position:absolute;left:16%;top:8%;width:66%;height:74%;background:var(--blue);opacity:.26;filter:blur(30px);clip-path:polygon(0 74%,18% 14%,45% 42%,72% 0,100% 66%,74% 100%,25% 88%)}
+.signal-field:after{content:"";position:absolute;right:10%;top:18%;width:42%;height:60%;background:var(--purple);opacity:.2;clip-path:polygon(20% 0,100% 28%,76% 100%,0 72%)}
+.cover .eyebrow,.section .eyebrow,.cover .source,.section .source{position:relative;z-index:1}
+.cover .hero{grid-column:1/span 8;grid-row:2/span 6;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.cover .hero h1{max-width:8em;font-size:clamp(48px,6.5vw,108px)}
+.cover .hero .copy{max-width:34em;color:#dfe4eb}
+.cover-meta{grid-column:10/span 3;grid-row:2/span 6;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.cover-meta .meta{border-top:1px solid rgba(255,255,255,.48);padding-top:9px}
+.cover-meta strong{display:block;font:600 clamp(22px,2vw,34px)/.95 var(--display);margin-top:6px}
+.cover-orbit{position:absolute;right:16%;top:26%;width:28%;aspect-ratio:1;border:1px solid rgba(255,255,255,.4);border-radius:50%;z-index:0}
+.cover-orbit:before,.cover-orbit:after{content:"";position:absolute;border-radius:50%}
+.cover-orbit:before{width:18%;aspect-ratio:1;left:9%;top:17%;background:var(--yellow);box-shadow:0 0 30px var(--yellow)}
+.cover-orbit:after{width:9%;aspect-ratio:1;right:17%;bottom:13%;background:var(--signal);box-shadow:0 0 24px var(--signal)}
+.section h1{grid-column:1/span 8;grid-row:3/span 4;align-self:center;position:relative;z-index:1;max-width:8em}
+.section .section-number{grid-column:10/span 2;grid-row:3/span 2;position:relative;z-index:1;font:700 clamp(70px,10vw,160px)/.7 var(--display);color:var(--yellow)}
+.section .section-note{grid-column:10/span 3;grid-row:6/span 2;position:relative;z-index:1;color:#dfe4eb}
+.section .signal-field{opacity:.55}
+
+/* Story and process compositions. */
+.headline{grid-column:1/span 12;grid-row:2/span 2;align-self:start}
+.headline h2{max-width:12em}
+.headline p{margin-top:14px;max-width:48em;line-height:1.28}
+.rail{grid-column:9/span 4;grid-row:2/span 6;display:flex;flex-direction:column;justify-content:space-between}
+.rail h2{color:var(--yellow);font-size:clamp(28px,3vw,50px)}
+.rail .label{color:var(--muted)}
+.rail.black .label{color:#b7bec8}
+.facts{grid-column:1/span 8;grid-row:5/span 3;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.facts .panel{display:flex;flex-direction:column;justify-content:space-between}
+.facts h3{margin-top:18px}
+.process{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:stretch}
+.process .node{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:18px}
+.process .node:not(:last-child):after{content:"";position:absolute;right:-19px;top:50%;width:26px;height:1px;background:var(--ink);z-index:2}
+.process .node:not(:last-child):before{content:"";position:absolute;right:-19px;top:calc(50% - 4px);border-left:7px solid var(--ink);border-top:4px solid transparent;border-bottom:4px solid transparent;z-index:2}
+.process .num,.rank-row .num{font:700 clamp(42px,5vw,80px)/.75 var(--display);letter-spacing:-.05em}
+.process .node h3{margin:18px 0 8px}
+.process .node ul,.rules ul{padding:0;margin:0;list-style:none}
+.process li{border-top:1px solid currentColor;padding:9px 0;font-size:clamp(12px,1vw,16px)}
+.compare{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.compare .side{padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.compare .side h2{margin:12px 0 18px}
+.compare .side p{max-width:26em}
+.compare .side .foot{border-top:1px solid currentColor;padding-top:10px;margin-top:20px}
+.types{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.types .type{padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.types .type .index{font:700 clamp(42px,4vw,70px)/.7 var(--display)}
+.types .type h3{margin:22px 0 9px}
+.types .type p{font-size:clamp(11px,1vw,15px);line-height:1.2}
+.rank-grid{grid-column:1/span 12;grid-row:4/span 4;display:flex;flex-direction:column;gap:var(--gap)}
+.rank-row{display:grid;grid-template-columns:2.1fr 5fr 3fr;min-height:0;flex:1;align-items:stretch}
+.rank-row .rank-label{padding:12px 18px;background:var(--ink);color:var(--paper);display:flex;align-items:center;gap:16px}
+.rank-row .rank-label h3{font-size:clamp(18px,1.8vw,30px)}
+.rank-row .rank-copy{padding:12px 18px;background:#e8e4f5;display:flex;align-items:center}
+.rank-row .rank-signal{padding:12px 18px;background:var(--positive);display:flex;align-items:center}
+.cascade{grid-column:1/span 12;grid-row:2/span 6;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.slide--cascade .headline--compact{grid-column:1/span 12;grid-row:2/span 2;align-self:start}
+.slide--cascade .headline--compact h2{max-width:14em;font-size:clamp(24px,2.9vw,52px)}
+.slide--cascade .headline--compact .copy{font-size:clamp(14px,1.2vw,18px);max-width:52em;margin-top:10px}
+.slide--cascade .cascade{grid-row:4/span 4;justify-content:center;gap:4px;padding-bottom:8px}
+.slide--cascade .cascade-row{min-height:48px}
+.slide--cascade .source{bottom:20px;z-index:5}
+.slide--link-map:not(.has-part-progress) .headline{grid-row:2/span 2}
+.slide--link-map:not(.has-part-progress) > .link-map{grid-row:4/span 3}
+.slide--link-map:not(.has-part-progress) > .link-warning{grid-row:7/span 2}
+.cascade-row{display:grid;grid-template-columns:2.8fr 1fr 7.2fr;align-items:stretch;min-height:52px}
+.cascade-row .tag{background:var(--ink);color:var(--paper);padding:11px 16px;display:flex;align-items:center;gap:12px}
+.cascade-row .tag strong{font:600 22px var(--display)}
+.cascade-row .tag small{font-size:12px;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em}
+.cascade-row .explain{background:#e8e4f5;padding:10px 14px;font-size:clamp(11px,1vw,15px);display:flex;align-items:center}
+.cascade-row .curve{position:relative}
+.cascade-row .curve:before{content:"";position:absolute;left:6px;top:-13px;width:23px;height:33px;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);border-radius:0 0 0 18px}
+.cascade-row .curve:after{content:"";position:absolute;left:24px;bottom:-4px;border-left:6px solid var(--ink);border-top:4px solid transparent;border-bottom:4px solid transparent}
+.projects{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.project{padding:18px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.project:after{content:"";position:absolute;right:-14%;bottom:-18%;width:58%;aspect-ratio:1;border:1px solid rgba(17,17,17,.3);border-radius:50%;box-shadow:0 0 0 18px rgba(17,17,17,.06),0 0 0 36px rgba(17,17,17,.04)}
+.project .project-code{font:700 clamp(34px,4vw,66px)/.7 var(--display)}
+.project h3{margin-top:18px}
+.project p{max-width:16em;margin-top:8px}
+.link-map{grid-column:1/span 12;grid-row:4/span 3;display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:var(--gap);align-items:center}
+.link-card{padding:18px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}
+.link-card h2{font-size:clamp(27px,3vw,50px)}
+.link-arrow{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.link-arrow:before{content:"";width:100%;border-top:2px solid var(--ink)}
+.link-arrow:after{content:"";position:absolute;right:0;border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.link-arrow span{position:absolute;top:calc(50% - 34px);background:var(--yellow);padding:7px 10px;font:600 12px var(--body);text-transform:uppercase;letter-spacing:.06em}
+.link-warning{grid-column:1/span 12;grid-row:7/span 2;display:grid;grid-template-columns:1.1fr 2.4fr;gap:var(--gap);align-items:stretch;padding:16px 18px;border-top:4px solid var(--ink)}
+.link-warning h3{font-size:clamp(22px,2.4vw,36px);margin-bottom:10px}
+.link-warning ul{padding:0;margin:0;list-style:none}
+.link-warning li{border-top:1px solid currentColor;padding:8px 0;font-size:clamp(12px,1.05vw,16px)}
+.guardrails .panel ul{padding:0;margin:8px 0 0;list-style:none}
+.guardrails .panel li{border-top:1px solid currentColor;padding:6px 0;font-size:clamp(11px,.95vw,14px)}
+.trace{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.trace .trace-card{padding:17px;display:flex;flex-direction:column;justify-content:space-between;border-top:5px solid var(--ink)}
+.trace .trace-card h3{margin:15px 0 9px}
+.trace .trace-card .mark{font:700 42px var(--display);line-height:.7}
+.example{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);position:relative}
+.example:after{content:"";position:absolute;left:12%;right:12%;top:50%;border-top:2px solid var(--ink);z-index:0}
+.example .example-card{padding:17px;display:flex;flex-direction:column;justify-content:space-between;z-index:1;min-height:260px}
+.example .example-card h3{margin:15px 0 9px}
+.example .example-card ul{padding:0;margin:0;list-style:none}
+.example .example-card li{padding:8px 0;border-top:1px solid currentColor;font-size:clamp(11px,1vw,15px)}
+.decision{grid-column:1/span 7;grid-row:2/span 6;display:flex;flex-direction:column;justify-content:space-between}
+.decision h1{font-size:clamp(42px,5.7vw,92px);max-width:8em}
+.decision .copy{max-width:30em}
+.guardrails{grid-column:9/span 4;grid-row:2/span 6;display:grid;grid-template-rows:repeat(3,1fr);gap:var(--gap)}
+.guardrails .panel{display:flex;flex-direction:column;justify-content:space-between}
+.guardrails .panel h3{margin-bottom:10px}
+.rules{grid-column:1/span 12;grid-row:4/span 4;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.rules .rule-card{padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.rules .rule-card h3{margin:18px 0}
+.rules li{border-top:1px solid currentColor;padding:9px 0;font-size:clamp(12px,1vw,16px)}
+
+/* Reveal.js-inspired runtime controls without adding a framework dependency. */
+.controls{position:fixed;left:20px;bottom:13px;color:#a7adb7;font:12px var(--body);letter-spacing:.02em;z-index:20;opacity:.8}
+.deck-nav{position:fixed;right:20px;top:16px;display:flex;gap:6px;z-index:22}
+.deck-nav button{border:1px solid rgba(255,255,255,.45);background:rgba(5,6,7,.78);color:#fff;padding:7px 9px;font:600 12px var(--body);cursor:pointer}
+.deck-nav button:hover,.deck-nav button:focus-visible{background:var(--yellow);color:var(--ink);outline:2px solid var(--yellow);outline-offset:2px}
+.progress{position:fixed;left:0;bottom:0;height:3px;background:var(--yellow);z-index:21}
+.notes{display:none;position:fixed;left:20px;right:20px;bottom:42px;max-width:760px;padding:14px 17px;background:var(--yellow);color:var(--ink);font:12px/1.35 var(--body);z-index:20}
+body.show-notes .notes{display:block}
+body.overview{overflow:auto}
+body.overview .deck{height:auto;min-height:100vh;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:30px}
+body.overview .slide{display:grid;width:100%;height:auto;aspect-ratio:16/9;padding:16px;transform:none;cursor:pointer;box-shadow:0 0 0 1px #30343a}
+body.overview .slide:before{height:3px}
+body.overview .slide:after,.overview .source,.overview .controls,.overview .progress,.overview .notes{display:none}
+body.overview .deck-nav{display:none}
+@media(max-width:800px){
+  :root{--pad:22px;--gap:7px}.panel{padding:11px}.source{left:var(--pad);max-width:68%}
+  .cover .hero h1{font-size:clamp(38px,7vw,72px)}.cover-meta strong{font-size:18px}
+  .types{grid-template-columns:repeat(2,1fr)}.rank-row{grid-template-columns:1.6fr 4fr 2fr}
+  .rank-row .rank-label,.rank-row .rank-copy,.rank-row .rank-signal{padding:8px}
+  .rank-row .num{font-size:34px}.rank-row .rank-label h3{font-size:17px}
+  .rules,.trace{grid-template-columns:repeat(2,1fr)}.rules .rule-card:last-child,.trace .trace-card:last-child{display:none}
+}
+@media(prefers-reduced-motion:no-preference){
+  .slide.active>*{animation:enter .42s ease-out both}
+  .slide.active>*:nth-child(2){animation-delay:.04s}.slide.active>*:nth-child(3){animation-delay:.08s}
+  .slide.active>*:nth-child(4){animation-delay:.12s}
+  @keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+}
+/* Canonical research layouts — see references/canonical-layouts.md */
+
+.slide--canonical{background:var(--paper);color:var(--ink)}
+.slide--canonical:before{background:var(--yellow);height:0}
+.slide--canonical .bees-b-icon{
+  width:36px;height:36px;border-radius:50%;background:var(--paper);
+  box-shadow:0 2px 8px rgba(0,0,0,.08);display:grid;place-items:center;
+  font:800 18px var(--display);letter-spacing:-.04em;
+}
+.slide--canonical .bees-b-icon::before{content:"b";color:var(--ink)}
+.slide--canonical .bees-wordmark{
+  font:800 clamp(52px,7vw,96px)/.85 var(--display);letter-spacing:-.02em;
+  color:var(--ink);text-transform:uppercase;
+}
+
+/* 1 — Cover hero */
+.slide.cover-hero{background:var(--yellow);color:var(--ink);overflow:hidden}
+.slide.cover-hero:after{color:var(--muted)}
+.slide.cover-hero:before{display:none}
+.slide.cover-hero .cover-hero__corner{
+  position:absolute;right:0;bottom:0;width:42%;height:38%;
+  background:var(--paper);border-top-left-radius:120px;z-index:0;
+}
+.slide.cover-hero .cover-hero__content{
+  grid-column:1/span 7;grid-row:2/span 6;display:flex;flex-direction:column;
+  justify-content:center;gap:20px;position:relative;z-index:2;padding-right:var(--pad);
+}
+.slide.cover-hero .subtitle-pill{
+  display:inline-block;background:var(--ink);color:var(--paper);
+  padding:10px 18px;border-radius:999px;font:600 clamp(18px,2vw,28px) var(--display);
+  width:max-content;max-width:100%;
+}
+.slide.cover-hero .team-line{font:600 14px var(--body);margin-top:24px}
+.slide.cover-hero .cover-hero__mascot{
+  position:absolute;right:clamp(12px,2.5vw,48px);bottom:clamp(-8px,-1vh,24px);
+  width:min(46vw,520px);max-height:72vh;height:auto;z-index:3;
+  object-fit:contain;object-position:100% 100%;
+  pointer-events:none;filter:drop-shadow(0 12px 28px rgba(0,0,0,.12));
+}
+
+/* 2 — Team */
+.slide.team-page .bees-b-icon{position:absolute;left:var(--pad);top:var(--pad);z-index:3}
+.slide.team-page .team-rail{grid-column:1/span 4;grid-row:1/span 8;padding-top:56px;position:relative;z-index:2}
+.slide.team-page .team-rail h1{font-size:clamp(40px,5vw,72px)}
+.slide.team-page .team-panel{
+  grid-column:4/span 9;grid-row:1/span 8;background:var(--yellow);
+  border-bottom-left-radius:clamp(48px,8vw,120px);padding:var(--pad);
+  display:flex;flex-direction:column;justify-content:space-between;position:relative;
+}
+.slide.team-page .member{display:flex;align-items:center;gap:16px;margin-top:12px}
+.slide.team-page .member img{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#ddd}
+.slide.team-page .member h3{font-size:clamp(20px,2vw,28px)}
+.slide.team-page .member p{font-size:14px;color:var(--muted)}
+.slide.team-page .hive-ornament{
+  align-self:flex-end;width:min(220px,40%);margin-right:-12px;object-fit:contain;
+}
+.slide.team-page .confidential{
+  position:absolute;right:var(--pad);bottom:12px;font-size:10px;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase;
+}
+
+/* 3 — Agenda */
+.slide.agenda-split .bees-b-icon{position:absolute;left:var(--pad);top:var(--pad);z-index:3}
+.slide.agenda-split .agenda-rail{
+  grid-column:1/span 4;grid-row:1/span 8;align-self:stretch;padding-top:56px;
+  position:relative;z-index:2;background:var(--paper);padding-right:8px;
+}
+.slide.agenda-split .agenda-rail h1{font-size:clamp(36px,4.2vw,64px);line-height:.92;max-width:6em}
+.slide.agenda-split .agenda-panel{
+  grid-column:5/span 8;grid-row:1/span 8;background:var(--yellow);
+  border-bottom-left-radius:clamp(48px,8vw,120px);padding:var(--pad);
+  padding-left:clamp(20px,2.5vw,36px);
+  display:flex;flex-direction:column;justify-content:center;gap:22px;z-index:1;
+  min-width:0;overflow:visible;
+}
+.slide.agenda-split .agenda-step{display:flex;align-items:flex-start;gap:16px;font:600 clamp(15px,1.45vw,20px) var(--body)}
+.slide.agenda-split .step-chip{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  font:700 14px var(--display);flex-shrink:0;
+}
+.slide.agenda-split .step-chip--active{background:var(--ink);color:var(--paper)}
+.slide.agenda-split .step-chip--upcoming{
+  background:var(--paper);color:var(--ink);border:2px dashed var(--ink);
+}
+
+/* 4 — Split visual */
+.slide.split-visual .split-head{
+  grid-column:1/span 12;grid-row:1/span 2;display:flex;align-items:center;gap:12px;
+}
+.slide.split-visual .split-copy{grid-column:1/span 5;grid-row:3/span 5;align-self:start}
+.slide.split-visual .split-copy ul{margin:16px 0 0;padding-left:1.1em;font-size:clamp(14px,1.3vw,18px);line-height:1.35}
+.slide.split-visual .split-visual-well{
+  grid-column:6/span 7;grid-row:2/span 6;background:#e8e4f5;
+  border-radius:48px 0 0 48px;margin-right:calc(-1 * var(--pad));
+  display:grid;place-items:center;padding:24px;position:relative;overflow:hidden;
+}
+.slide.split-visual .split-visual-well img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* 5 — Interactive assessment */
+.slide.interactive-assessment .ia-head{
+  grid-column:1/span 12;grid-row:1/span 2;display:flex;align-items:center;gap:12px;
+}
+.slide.interactive-assessment .ia-table-wrap{
+  grid-column:1/span 8;grid-row:3/span 3;overflow:hidden;font-size:clamp(10px,.9vw,13px);
+}
+.slide.interactive-assessment table{width:100%;border-collapse:collapse}
+.slide.interactive-assessment th{background:var(--ink);color:var(--paper);padding:8px;text-align:left}
+.slide.interactive-assessment td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+.slide.interactive-assessment .score-pill{
+  display:inline-block;padding:4px 10px;border-radius:999px;font-weight:600;font-size:12px;
+}
+.slide.interactive-assessment .score-pill--high{background:#c8f5e2}
+.slide.interactive-assessment .score-pill--low{background:var(--attention)}
+.slide.interactive-assessment .ia-cards{
+  grid-column:1/span 8;grid-row:6/span 2;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);
+}
+.slide.interactive-assessment .ia-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+}
+.slide.interactive-assessment .ia-card h4{margin:0 0 8px;font-size:14px}
+.slide.interactive-assessment .ia-card--worked h4{border-bottom:3px solid linear-gradient(90deg,var(--blue),var(--positive))}
+.slide.interactive-assessment .ia-visual{
+  grid-column:9/span 4;grid-row:3/span 5;display:grid;place-items:center;
+}
+.slide.interactive-assessment .ia-visual img{max-height:100%;max-width:100%;object-fit:contain}
+
+/* 6 — Findings + quotes */
+.slide.findings-quotes .fq-head{
+  grid-column:1/span 12;grid-row:1/span 2;display:flex;align-items:center;gap:12px;
+}
+.slide.findings-quotes .fq-findings{grid-column:1/span 6;grid-row:3/span 5;display:flex;flex-direction:column;gap:14px}
+.slide.findings-quotes .fq-block h3{font-size:clamp(16px,1.5vw,22px);margin-bottom:6px}
+.slide.findings-quotes .fq-rule{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--positive));margin-bottom:8px}
+.slide.findings-quotes .fq-quotes{grid-column:7/span 6;grid-row:3/span 5;display:flex;flex-direction:column;gap:12px}
+.slide.findings-quotes .fq-quote{
+  font:600 italic clamp(13px,1.2vw,16px)/1.35 var(--body);
+  background:linear-gradient(180deg,transparent 55%,var(--yellow) 55%);
+  padding:4px 0;
+}
+
+/* 7 — Interaction analysis */
+.slide.interaction-analysis .ia2-head{
+  grid-column:1/span 12;grid-row:1/span 2;display:flex;align-items:center;gap:12px;
+}
+.slide.interaction-analysis .ia2-table{
+  grid-column:1/span 12;grid-row:3/span 5;font-size:clamp(9px,.85vw,12px);overflow:hidden;
+}
+.slide.interaction-analysis table{width:100%;border-collapse:collapse}
+.slide.interaction-analysis th{font-weight:700;padding:8px;border-bottom:2px solid var(--ink)}
+.slide.interaction-analysis td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.slide.interaction-analysis .topic-cell{background:#ececec;font-weight:600}
+.slide.interaction-analysis .score-cell{background:#ffdada;font-weight:700;text-align:center}
+.slide.interaction-analysis .impact-high{color:#0a8f5a;font-weight:600}
+.slide.interaction-analysis .impact-med{color:#c97800;font-weight:600}
+.slide.interaction-analysis .proto-badge{
+  display:inline-block;margin-top:6px;padding:3px 6px;background:#0a8f5a;color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:.04em;
+}
+.slide.interaction-analysis .ia2-foot{
+  grid-column:1/span 8;grid-row:8/span 1;font-size:11px;color:var(--muted);
+}
+
+/* 8 — Executive summary (report) */
+.slide.executive-summary .ex-head{grid-column:1/span 12;grid-row:1/span 2}
+.slide.executive-summary .ex-answer{
+  grid-column:1/span 12;grid-row:3/span 2;background:var(--ink);color:var(--paper);padding:20px;
+}
+.slide.executive-summary .ex-implications{
+  grid-column:1/span 12;grid-row:5/span 3;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);
+}
+.slide.executive-summary .ex-implications article{
+  border:1px solid var(--line);padding:14px;border-radius:8px;
+}
+.slide.executive-summary .ex-next{
+  grid-column:1/span 12;grid-row:8/span 1;background:var(--yellow);padding:12px 16px;font-weight:600;
+}
+
+/* Yellow spine (canonical inner slides) */
+.slide--canonical:not(.cover-hero):before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--yellow);height:auto;z-index:4;
+}
+/* Jira enablement — modular layout (all composition slides using studio-pilot-jira.css) */
+
+:root{
+  --strip-pad:clamp(10px,1.2vh,14px) clamp(16px,2vw,22px);
+  --card-pad:clamp(14px,1.6vh,20px);
+  --card-band-max:min(40vh,270px);
+  --enablement-headline-gap:clamp(10px,1.5vh,20px);
+  --enablement-panel-pad:clamp(16px,2vh,26px);
+  --enablement-panel-min-h:min(54vh,500px);
+}
+
+/* Full-width footer / callout strips (default grid auto-placement = 1 column only) */
+.slide > :is(.slide-bridge,.summary-strip,.next-step-strip,.trace-footnote,.flow-note){
+  grid-column:1/-1;justify-self:stretch;width:100%;max-width:none;margin:0;
+}
+.slide:not(.has-part-progress) > :is(.slide-bridge,.summary-strip,.next-step-strip){
+  grid-row:8;align-self:end;
+}
+
+.slide.has-part-progress{
+  grid-template-rows:
+    min-content min-content min-content
+    minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)
+    min-content min-content;
+  row-gap:clamp(8px,1.2vh,14px);
+}
+
+.slide > .slide-body{
+  grid-column:1/span 12;min-height:0;align-self:stretch;overflow:hidden;
+}
+.slide:not(.has-part-progress) > .slide-body{grid-row:4/span 4}
+.slide.has-part-progress > .slide-body{grid-row:4/span 3}
+.slide.has-part-progress.has-bridge > .slide-body,
+.slide.has-part-progress.has-summary-strip > .slide-body{grid-row:4/span 2}
+.slide.has-part-progress.has-bridge.has-summary-strip > .slide-body{grid-row:4/span 1}
+
+.slide.has-part-progress .part-progress{grid-row:1;align-self:end;margin-bottom:4px}
+.slide.has-part-progress .eyebrow{grid-row:2;align-self:end;margin:0}
+.slide.has-part-progress .headline,
+.slide.has-part-progress .headline--compact{
+  grid-row:3;align-self:start;margin:0;padding-bottom:var(--enablement-headline-gap);
+}
+.slide.has-part-progress .headline h2{
+  font-size:clamp(24px,2.85vw,48px);max-width:22em;line-height:1.08;margin:0;
+}
+.slide.has-part-progress .headline .copy{
+  font-size:clamp(14px,1.25vw,19px);margin-top:var(--enablement-headline-gap);
+  line-height:1.32;max-width:56em;
+}
+
+.slide.has-part-progress > .slide-bridge{grid-row:7;align-self:end;z-index:2}
+.slide.has-part-progress > .summary-strip,
+.slide.has-part-progress > .next-step-strip,
+.slide.has-part-progress > .trace-footnote,
+.slide.has-part-progress > .flow-note{grid-row:8;align-self:end;z-index:2}
+.slide.has-part-progress.has-bridge.has-summary-strip > .summary-strip{grid-row:8}
+.slide.has-part-progress.has-bridge:not(.has-summary-strip) > .slide-bridge{grid-row:7}
+.slide.has-part-progress:not(.has-bridge) > .next-step-strip{grid-row:7}
+.slide.has-part-progress.has-bridge > .next-step-strip{grid-row:8}
+.part-progress{
+  grid-column:1/span 12;display:flex;gap:12px;align-items:center;
+  justify-content:flex-start;max-width:42em;z-index:5;
+}
+.part-progress .step{
+  flex:0 1 auto;display:flex;align-items:center;gap:6px;font:600 9px var(--body);
+  text-transform:uppercase;letter-spacing:.05em;color:var(--muted);white-space:nowrap;
+}
+.part-progress .step span.dot{width:7px;height:7px;border-radius:50%;background:var(--rule);flex-shrink:0}
+.part-progress .step.is-active{color:var(--ink)}
+.part-progress .step.is-active .dot{background:var(--yellow);box-shadow:0 0 0 2px var(--ink)}
+.part-progress .step.is-done .dot{background:var(--ink)}
+
+.slide-bridge{
+  font:600 clamp(12px,1.05vw,15px) var(--body);color:var(--ink);background:var(--attention);
+  padding:var(--strip-pad);border-left:4px solid var(--ink);line-height:1.35;
+}
+.summary-strip{
+  font:600 clamp(12px,1.05vw,15px) var(--body);background:var(--ink);color:var(--paper);
+  padding:var(--strip-pad);line-height:1.35;
+}
+.next-step-strip{
+  background:var(--ink);color:var(--paper);padding:var(--strip-pad);
+  font:600 clamp(12px,1.08vw,16px) var(--body);line-height:1.38;
+}
+
+/* Content band: top-aligned, proportional cards (not full-bleed empty panels) */
+.slide.has-part-progress > .slide-body{
+  min-height:0;width:100%;align-self:stretch;height:100%;
+}
+.slide.has-part-progress > .slide-body.slide-body--stack{
+  display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;
+}
+.slide.has-part-progress > .slide-body:is(.cascade-ladder,.projects,.process-map,.rules-close,.example-diagram){
+  display:grid;
+}
+.slide.has-part-progress > .slide-body.before-after{
+  display:grid;
+}
+.slide.has-part-progress > .slide-body:is(
+  .process-map,.projects,.link-hub-wrap,.link-map-wrap,.trace-chain-wrap,.rules-close,.bc-tree,.example-diagram,.decision-flow
+){
+  min-height:var(--enablement-panel-min-h);
+}
+.slide.has-part-progress > .slide-body.link-map-wrap{
+  display:flex;flex-direction:column;gap:clamp(12px,1.4vh,18px);
+}
+.link-map-wrap .link-map{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:var(--gap);align-items:stretch;
+  flex:1 1 auto;min-height:0;width:100%;height:100%;
+}
+.link-map-wrap .link-card{
+  min-height:100%;padding:var(--enablement-panel-pad);display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.link-map-wrap .link-card h2{font-size:clamp(22px,2.4vw,42px);line-height:1.05}
+.link-map-wrap .link-card .small{font-size:clamp(13px,1.12vw,16px);line-height:1.32}
+.link-map-wrap .link-arrow{align-self:stretch;min-width:clamp(48px,5vw,72px)}
+.link-map-wrap .link-warning{
+  flex:0 0 auto;width:100%;grid-column:unset;grid-row:unset;
+  display:grid;grid-template-columns:1.1fr 2.4fr;gap:var(--gap);align-items:stretch;
+  padding:var(--enablement-panel-pad);border-top:4px solid var(--ink);
+}
+.link-map-wrap .link-warning h3{font-size:clamp(20px,2vw,34px);margin:0 0 8px}
+.link-map-wrap .link-warning li{
+  font-size:clamp(13px,1.12vw,16px);padding:clamp(8px,.9vh,11px) 0;
+}
+.slide.has-part-progress > .slide-body.decision-flow{
+  display:flex;flex-direction:column;
+}
+.slide.has-part-progress > .slide-body.bc-tree{
+  display:flex;flex-direction:column;
+}
+.slide-body--stack{gap:clamp(12px,1.4vh,18px);height:100%;min-height:0}
+.slide-body--stack > .trace-chain,
+.slide-body--stack > .link-hub.link-hub-row,
+.slide-body--stack > .link-map{flex:1 1 auto;min-height:0}
+.slide-body--stack > .content-strip,
+.slide-body--stack > .mistake-chips{flex:0 0 auto;width:100%}
+.content-strip{
+  font:600 clamp(12px,1.05vw,15px) var(--body);line-height:1.35;padding:var(--strip-pad);
+  background:var(--attention);border-left:4px solid var(--ink);margin:0;
+}
+.slide-body.before-after{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);
+  height:100%;align-content:center;align-items:center;
+}
+.before-after .ba-card{
+  height:auto;max-height:var(--card-band-max);align-self:center;
+  padding:var(--card-pad);display:flex;flex-direction:column;justify-content:center;gap:10px;
+}
+.before-after .ba-card h3{font-size:clamp(17px,1.55vw,26px);line-height:1.12}
+.before-after .ba-card .copy{font-size:clamp(14px,1.2vw,18px);line-height:1.28}
+
+.slide.has-part-progress .projects{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);height:100%;align-items:stretch;
+  align-content:stretch;flex:1 1 auto;
+}
+.slide.has-part-progress .project{
+  padding:var(--card-pad);display:flex;flex-direction:column;justify-content:space-between;gap:12px;
+  min-height:100%;height:100%;overflow:visible;
+}
+.slide.has-part-progress .project:after{display:none}
+.slide.has-part-progress .project .project-code{
+  font:700 clamp(24px,2.6vw,42px)/.9 var(--display);letter-spacing:-.02em;
+}
+.slide.has-part-progress .project h3{margin:6px 0 0;font-size:clamp(18px,1.55vw,26px)}
+.slide.has-part-progress .project .label{margin-bottom:4px;font-size:clamp(10px,.9vw,12px)}
+.slide.has-part-progress .project ul{margin:8px 0 0;padding:0;list-style:none}
+.slide.has-part-progress .project li{
+  border-top:1px solid rgba(17,17,17,.25);padding:9px 0;font-size:clamp(13px,1.12vw,16px);line-height:1.28;
+}
+.slide.has-part-progress .project .pin{
+  display:inline-block;background:var(--ink);color:var(--paper);padding:4px 8px;
+  font:600 9px var(--body);text-transform:uppercase;letter-spacing:.05em;width:max-content;
+}
+.slide.has-part-progress .project.is-muted{opacity:.72}
+
+.slide.has-part-progress .types{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);height:100%;align-content:stretch;
+}
+.slide.has-part-progress .types .type{
+  padding:var(--card-pad);min-height:0;display:flex;flex-direction:column;justify-content:space-between;
+}
+.slide.has-part-progress .types .type h3{font-size:clamp(15px,1.35vw,20px)}
+.slide.has-part-progress .types .type p{font-size:clamp(11px,1vw,14px)}
+
+.agenda-path{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;font:600 10px var(--body);
+  text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px;padding-bottom:10px;
+  border-bottom:2px solid var(--ink);
+}
+.agenda-step__body{display:flex;flex-direction:column;gap:6px}
+.agenda-step__detail{font:400 13px var(--body);text-transform:none;letter-spacing:0;line-height:1.35;max-width:36em}
+
+.before-after .ba-card--bad{background:#ffe8e8;border:2px solid #c44}
+.before-after .ba-card--good{background:var(--positive);border:2px solid var(--ink)}
+
+.process-map{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);height:100%;width:100%;align-items:stretch;
+}
+.process-map .map-hero{
+  padding:var(--enablement-panel-pad);display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px);
+  min-height:100%;justify-content:space-between;
+}
+.process-map .map-hero .q{font:700 clamp(34px,3.8vw,58px)/.88 var(--display)}
+.process-map .map-hero .chip{
+  display:inline-block;background:var(--ink);color:var(--yellow);padding:5px 10px;
+  font:600 clamp(9px,.85vw,11px) var(--body);text-transform:uppercase;width:max-content;letter-spacing:.04em;
+}
+.process-map .map-hero .map-detail{font-size:clamp(12px,1.08vw,15px);line-height:1.32;max-width:100%}
+.process-map .map-hero ul{margin:0;padding:0;list-style:none;flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+.process-map .map-hero li{
+  border-top:1px solid currentColor;padding:clamp(7px,.9vh,10px) 0;
+  font-size:clamp(13px,1.12vw,16px);line-height:1.28;
+}
+
+.bc-tree{
+  display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px);align-items:stretch;
+  justify-content:center;height:100%;width:100%;
+}
+.bc-tree .bc-box{
+  width:100%;padding:var(--enablement-panel-pad);background:var(--purple);border:3px solid var(--ink);
+  text-align:center;
+}
+.bc-tree .bc-box .small{font-size:clamp(12px,1.05vw,15px);line-height:1.3;margin-top:8px}
+.bc-tree .fr-row{display:flex;gap:var(--gap);width:100%;justify-content:stretch}
+.bc-tree .fr-slice{
+  flex:1;min-width:0;padding:clamp(12px,1.4vh,16px);background:var(--positive);border:2px solid var(--ink);
+  font-size:clamp(12px,1.05vw,15px);line-height:1.28;text-align:center;
+}
+.bc-tree .mistakes{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;
+  font:600 clamp(11px,1vw,13px) var(--body);
+}
+
+.rank-layout{display:grid;grid-template-columns:1.6fr 1fr;gap:var(--gap);height:100%;min-height:0}
+.rank-ladder{display:flex;flex-direction:column;gap:8px;min-height:0}
+.rank-ladder .rank-item{display:grid;grid-template-columns:48px 1fr 1fr;gap:6px;flex:1;min-height:0}
+.rank-ladder .rank-hash{background:var(--ink);color:var(--yellow);display:grid;place-items:center;font:700 22px var(--display)}
+.rank-ladder .rank-mid{padding:10px 12px;background:#e8e4f5;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.rank-ladder .rank-mid h3{font-size:clamp(15px,1.4vw,20px);margin:0;line-height:1.05}
+.rank-ladder .rank-mid p{margin:0;font-size:clamp(10px,.9vw,12px);line-height:1.22}
+.rank-ladder .rank-tag{padding:10px 12px;background:var(--positive);font-size:clamp(10px,.88vw,12px);line-height:1.2;display:flex;align-items:center}
+.rank-aside{
+  padding:14px;background:var(--blue);border:3px solid var(--ink);
+  display:flex;flex-direction:column;justify-content:center;gap:8px;min-width:0;
+}
+.rank-aside h3{font-size:clamp(16px,1.5vw,22px);line-height:1.08}
+
+.cascade-ladder{
+  display:grid;grid-template-columns:32px 1fr 32px;gap:8px;height:100%;min-height:0;align-items:stretch;
+  flex:1 1 auto;align-self:stretch;width:100%;
+}
+.cascade-ladder .bracket-left,.cascade-ladder .bracket-right{
+  border:3px solid var(--ink);font:600 9px var(--body);text-transform:uppercase;
+  writing-mode:vertical-rl;text-align:center;display:flex;align-items:center;justify-content:center;
+  align-self:stretch;min-height:0;padding:8px 4px;
+}
+.cascade-ladder .bracket-left{border-right:none}
+.cascade-ladder .bracket-right{border-left:none;border-right:3px solid var(--ink)}
+.cascade-ladder .rungs{display:flex;flex-direction:column;gap:6px;min-height:0;height:100%;flex:1}
+.cascade-ladder .rung{
+  display:grid;grid-template-columns:1.05fr 1.35fr;gap:6px;flex:1 1 0;min-height:52px;
+}
+.cascade-ladder .rung .tag{
+  background:var(--ink);color:var(--paper);padding:10px 12px;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-width:0;
+}
+.cascade-ladder .rung .tag strong{font:600 clamp(15px,1.25vw,20px) var(--display);line-height:1.05}
+.cascade-ladder .rung .tag small{
+  color:var(--yellow);font-size:clamp(9px,.8vw,11px);text-transform:uppercase;letter-spacing:.05em;line-height:1.2;
+}
+.cascade-ladder .rung .explain{
+  background:#e8e4f5;padding:10px 12px;font-size:clamp(11px,1vw,14px);line-height:1.28;
+  display:flex;align-items:center;
+}
+
+.link-hub-wrap.slide-body--stack{height:100%}
+.link-hub.link-hub-row{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:8px;
+  width:100%;min-height:0;
+}
+.link-hub .hub-side,.link-hub .hub-center{
+  min-width:0;padding:var(--enablement-panel-pad);font-size:clamp(13px,1.12vw,16px);line-height:1.32;
+  display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:100%;align-self:stretch;
+}
+.link-hub .hub-side h3,.link-hub .hub-center h3{font-size:clamp(18px,1.55vw,26px);line-height:1.1;margin:0}
+.link-hub .hub-side .label,.link-hub .hub-center .label{font-size:clamp(10px,.9vw,12px)}
+.link-hub .hub-center{
+  background:var(--yellow);border:3px solid var(--ink);position:relative;
+}
+.link-hub .hub-center .pin{
+  position:absolute;top:8px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);
+  padding:3px 8px;font-size:9px;text-transform:uppercase;white-space:nowrap;
+}
+.link-hub .hub-center{padding-top:28px}
+.link-hub .hub-arrow{
+  align-self:center;font:600 9px var(--body);text-transform:uppercase;letter-spacing:.04em;
+  white-space:nowrap;padding:0 2px;
+}
+.link-hub-wrap .mistake-chips{
+  display:flex;flex-wrap:wrap;gap:8px;width:100%;flex:0 0 auto;align-self:stretch;
+}
+.link-hub-wrap .mistake-chips span{
+  background:#ffe8e8;border:1px solid #c44;padding:6px 10px;font-size:clamp(10px,.95vw,12px);flex:0 1 auto;
+}
+
+.trace-chain{display:flex;align-items:stretch;gap:var(--gap);height:100%;min-height:0;width:100%}
+.trace-chain .link-card{
+  flex:1 1 0;min-width:0;padding:var(--enablement-panel-pad);border-top:4px solid var(--ink);
+  display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,1.2vh,14px);
+}
+.trace-chain .link-card h3{font-size:clamp(16px,1.45vw,22px);line-height:1.1}
+.trace-chain .link-card .small{font-size:clamp(12px,1.05vw,15px);line-height:1.3}
+.trace-chain .link-card .label{font-size:clamp(10px,.9vw,12px)}
+.trace-chain .chain-arrow{align-self:center;flex:0 0 auto}
+.trace-chain .decision-flag{
+  flex:0 0 auto;align-self:center;padding:10px 12px;background:var(--ink);color:var(--yellow);
+  font:700 clamp(14px,1.4vw,18px) var(--display);transform:rotate(-3deg);
+}
+.trace-chain-wrap .trace-footnote{border-left:4px solid var(--ink)}
+
+.example-diagram{
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:clamp(12px,1.4vh,18px);
+  height:100%;width:100%;align-content:stretch;align-items:stretch;
+}
+.example-diagram .ex-left{display:flex;flex-direction:column;gap:clamp(8px,1vh,12px);min-height:0;height:100%}
+.example-diagram .ex-bc,.example-diagram .ex-fr{
+  padding:clamp(12px,1.4vh,16px);border:2px solid var(--ink);line-height:1.32;
+  font-size:clamp(12px,1.08vw,15px);flex:1;
+}
+.example-diagram .ex-frs{display:flex;flex-direction:column;gap:clamp(6px,.8vh,10px);flex:1;min-height:0}
+.example-diagram .ex-fr{flex:1}
+.example-diagram .ex-right{
+  padding:var(--enablement-panel-pad);background:#e8e4f5;border:2px dashed var(--ink);
+  line-height:1.32;font-size:clamp(12px,1.08vw,15px);display:flex;align-items:center;min-height:100%;
+}
+.example-diagram .callout{
+  grid-column:1/span 2;padding:var(--strip-pad);background:var(--attention);border-left:4px solid var(--ink);
+  font-weight:600;font-size:clamp(12px,1.08vw,15px);line-height:1.35;
+}
+
+.decision-flow{
+  display:flex;flex-direction:column;gap:clamp(10px,1.2vh,14px);height:100%;width:100%;
+  justify-content:space-between;overflow:hidden;
+}
+.decision-flow .flow-step{
+  display:grid;grid-template-columns:48px 1fr;gap:clamp(12px,1.2vw,16px);
+  padding:var(--enablement-panel-pad);background:#e8e4f5;flex:1 1 0;min-height:0;
+  align-items:center;
+}
+.decision-flow .flow-step .n{
+  width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;font:700 clamp(18px,1.6vw,22px) var(--display);
+}
+.decision-flow .flow-step h3{font-size:clamp(16px,1.45vw,22px);line-height:1.12;margin:0}
+.decision-flow .flow-step .small{font-size:clamp(12px,1.05vw,15px);line-height:1.3;margin-top:6px}
+.flow-note{font-size:12px;color:var(--muted);font-style:italic}
+
+.rules-close{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;height:100%;align-content:stretch;align-items:stretch;
+}
+.rules-close .rule-num-card{
+  padding:var(--enablement-panel-pad);border:2px solid var(--ink);display:flex;flex-direction:column;
+  gap:clamp(10px,1.2vh,14px);font-size:clamp(12px,1.15vw,16px);line-height:1.36;
+  height:100%;min-height:0;justify-content:flex-start;
+}
+.rules-close .rule-num-card .n{font:700 clamp(28px,2.6vw,38px) var(--display);color:var(--purple);line-height:1}
+
+.types .type .guide{font:600 10px var(--body);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+
+.slide.cover-hero.cover-hero--no-mascot .cover-hero__corner{width:32%;height:28%}
+
+/* Inside slide-body, neutralize rich.css slide-level grid placement on nested blocks */
+.slide.has-part-progress .slide-body :is(
+  .link-map,.link-warning,.process,.compare,.types,.trace,.example,.rules,.cascade,.rank-grid
+){
+  grid-column:unset;grid-row:unset;
+}
+.slide.has-part-progress.slide--link-map .headline{grid-row:3}
+.slide.has-part-progress .link-map-wrap .link-card.black{background:var(--ink);color:var(--paper)}
+.slide.has-part-progress .link-map-wrap .link-card.black .label{color:#b7bec8}
+
+/* Legacy rich.css uses row 4 — part-progress slides override via .slide-body */
+.slide.has-part-progress .process,
+.slide.has-part-progress .compare,
+.slide.has-part-progress .types,
+.slide.has-part-progress .projects,
+.slide.has-part-progress .trace,
+.slide.has-part-progress .example,
+.slide.has-part-progress .rules,
+.slide.has-part-progress .rank-grid,
+.slide.has-part-progress .cascade{grid-row:unset;height:100%}
+</style>
+</head>
+<body>
+<main class="deck" aria-live="polite">
+
+
+
+
+<section class="slide active slide--canonical cover-hero cover-hero--no-mascot"
+  data-number="01"
+  data-action="Aplicar o mapa Jira no próximo estudo."
+  data-owner="Research"
+  data-notes="">
+
+
+
+
+<div class="cover-hero__corner" aria-hidden="true"></div>
+
+<div class="cover-hero__content">
+<div class="bees-wordmark" aria-label="BEES">BEES</div>
+<h1>A evidência de pesquisa deve mudar o trabalho</h1>
+<span class="subtitle-pill">Como conectar estudos, demanda e entrega no Jira</span>
+<p class="team-line">Time BEES Research</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="source">Piloto · habilitação Jira</div>
+</section>
+
+
+
+
+<section class="slide slide--canonical agenda-split"
+  data-number="02"
+  data-action="Aplicar o mapa Jira no próximo estudo."
+  data-owner="Research"
+  data-notes="">
+
+
+
+
+<div class="bees-b-icon" style="grid-column:1;grid-row:1" aria-hidden="true"></div>
+<div class="agenda-rail"><h1>O caminho de hoje</h1></div>
+<div class="agenda-panel">
+
+<div class="agenda-path">
+<span>Por quê</span><span class="path-arrow">→</span><span>Como a demanda vira entrega</span><span class="path-arrow">→</span><span>Onde a pesquisa entra</span>
+</div>
+
+
+<div class="agenda-step">
+<span class="step-chip step-chip--active">01</span>
+<div class="agenda-step__body"><span>Por que a evidência precisa mudar o trabalho</span><span class="agenda-step__detail">Você vai ver o que se perde quando um estudo não tem vínculo.</span></div>
+</div>
+
+<div class="agenda-step">
+<span class="step-chip step-chip--upcoming">02</span>
+<div class="agenda-step__body"><span>Como a demanda vira entrega</span><span class="agenda-step__detail">Você vai saber diferenciar Business Case, Feature Request, rank e Initiative.</span></div>
+</div>
+
+<div class="agenda-step">
+<span class="step-chip step-chip--upcoming">03</span>
+<div class="agenda-step__body"><span>Onde a pesquisa entra, as regras e os próximos passos</span><span class="agenda-step__detail">Você vai saber onde criar seu Epic, como ligá-lo à demanda e quando ele está completo.</span></div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="source"></div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-summary-strip"
+  data-number="03"
+  data-action="Quando cada estudo tem o lugar certo no Jira e o vínculo certo com a demanda, qualquer pessoa encontra a evidência na hora de decidir."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 1 · Por que isso importa?</div>
+<div class="headline"><h2>A evidência de pesquisa deve mudar o trabalho — não se perder em um relatório.</h2><p class="copy">Quando cada estudo tem o lugar certo no Jira e o vínculo certo com a demanda, qualquer pessoa encontra a evidência na hora de decidir.</p></div>
+<div class="slide-body before-after">
+
+<article class="ba-card ba-card--bad"><h3>Sem vínculo</h3><p class="copy">O relatório fica numa pasta e ninguém encontra.</p></article>
+
+<article class="ba-card ba-card--good"><h3>Com vínculo</h3><p class="copy">Estudo → BC/FR → decisão.</p></article>
+
+</div>
+
+
+
+<div class="summary-strip">Em resumo: 1 Epic no BEESUXR + 1 parent no BEESIP + 1 link Discovers para o BEESIMP.</div>
+
+
+
+<div class="source">Piloto · processo Jira</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-bridge"
+  data-number="04"
+  data-action="Para pesquisa: seu estudo se conecta a duas camadas ao mesmo tempo — a demanda (por quê) e a entrega (como)."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 2 · Como o trabalho se organiza?</div>
+<div class="headline"><h2>O trabalho vai da intenção comercial ao detalhe de entrega.</h2><p class="copy">Cada item responde a uma pergunta diferente. A hierarquia é um sistema de tradução, não uma lista de sinônimos.</p></div>
+<div class="slide-body process-map">
+
+
+<article class="map-hero purple">
+<p class="q">Por quê?</p>
+<span class="chip">Demanda · Business Case (BEESIMP)</span>
+<p class="small map-detail">Demanda (BEESIMP): o Business Case descreve o problema de negócio e o resultado esperado — é o “por quê” investir, com Global Rank na fila da empresa.</p>
+<ul><li>Problema estratégico</li><li>Resultado de negócio</li><li>Global Rank</li></ul>
+</article>
+
+
+<article class="map-hero mint">
+<p class="q">O quê?</p>
+<span class="chip">Abordagem · Feature Request (BEESIMP)</span>
+<p class="small map-detail">Feature Request (BEESIMP): uma lacuna ou abordagem específica — o “o quê” construir ou mudar, com Success Criteria avaliáveis; costuma ser uma fatia do BC.</p>
+<ul><li>Lacuna específica</li><li>Escopo da feature</li><li>Success Criteria</li></ul>
+</article>
+
+
+<article class="map-hero yellow">
+<p class="q">Como?</p>
+<span class="chip">Entrega · Initiative → Epic → Task (BEESIP)</span>
+<p class="small map-detail">Entrega (BEESIP): Initiative organiza a solução; Epics e Tasks são o trabalho dos times — o “como” executar, validar e entregar sem confundir com prioridade de demanda.</p>
+<ul><li>Limite da entrega</li><li>Trabalho dos times</li><li>Construção e validação</li></ul>
+</article>
+
+</div>
+
+
+
+
+<p class="slide-bridge">Para pesquisa: seu estudo se conecta a duas camadas ao mesmo tempo — a demanda (por quê) e a entrega (como).</p>
+
+
+<div class="source">process/jira-projects-and-hierarchy.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-bridge"
+  data-number="05"
+  data-action="Para pesquisa: seu estudo vai se ligar a um dos dois — saber a diferença ajuda a escolher o alvo certo."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 2 · Por quê ou o quê?</div>
+<div class="headline"><h2>O Business Case define o valor. O Feature Request define a abordagem.</h2><p class="copy">Não force uma solução dentro de um Business Case, nem deixe um Feature Request só no nível do problema.</p></div>
+<div class="slide-body bc-tree">
+<div class="bc-box"><strong>Business Case · BEESIMP</strong><p class="small">Guiado por problema e resultado. Pode abranger várias capacidades e virar uma ou mais Initiatives.</p></div>
+<div class="fr-row"><div class="fr-slice">Mecânica de promoção</div><div class="fr-slice">Promoção exclusiva por canal</div><div class="fr-slice">Dynamic flex balance</div></div>
+<div class="mistakes"><span>✗ Solução dentro do BC</span><span>✓ FR no nível da abordagem</span></div>
+</div>
+
+
+
+
+<p class="slide-bridge">Para pesquisa: seu estudo vai se ligar a um dos dois — saber a diferença ajuda a escolher o alvo certo.</p>
+
+
+<div class="source">process/jira-projects-and-hierarchy.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-bridge"
+  data-number="06"
+  data-action="Para pesquisa: conhecer o tipo ajuda a entender o que o FR que seu estudo informa está pedindo."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 2 · Que tipo de mudança?</div>
+<div class="headline"><h2>Um Feature Request pode descrever quatro tipos de mudança.</h2><p class="copy">A taxonomia ajuda Produto a interpretar o pedido. Ela não substitui escopo, evidência nem Success Criteria.</p></div>
+<div class="slide-body types">
+
+
+<article class="type purple">
+<span class="index">01</span>
+<div><p class="guide">Já existe e vai para um novo contexto?</p><h3>Feature Activation</h3><p>Usar uma capacidade existente em um novo mercado, parceiro ou contexto.</p></div>
+<span class="mono">Confirme que ela já existe e defina o limite da ativação.</span>
+</article>
+
+
+<article class="type mint">
+<span class="index">02</span>
+<div><p class="guide">Já existe, mas precisa melhorar?</p><h3>Feature Improvement</h3><p>Melhorar uma capacidade ou jornada existente.</p></div>
+<span class="mono">Descreva o atrito atual e a melhoria mensurável.</span>
+</article>
+
+
+<article class="type yellow">
+<span class="index">03</span>
+<div><p class="guide">Ainda não existe?</p><h3>New Feature</h3><p>Criar uma capacidade que não existe hoje.</p></div>
+<span class="mono">Defina problema, usuários, limite e o contrato de conclusão no nível da feature.</span>
+</article>
+
+
+<article class="type pink">
+<span class="index">04</span>
+<div><p class="guide">É uma jornada nova de ponta a ponta?</p><h3>New User Experience</h3><p>Introduzir uma nova interação ou jornada completa.</p></div>
+<span class="mono">Descreva a mudança na jornada, não só na interface.</span>
+</article>
+
+</div>
+
+
+
+
+<p class="slide-bridge">Para pesquisa: conhecer o tipo ajuda a entender o que o FR que seu estudo informa está pedindo.</p>
+
+
+<div class="source">docs/prodops-beacon.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-bridge"
+  data-number="07"
+  data-action="Para pesquisa: é ao se ligar a um BC/FR que o estudo passa a ficar visível junto ao Global Rank."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 2 · Quem vem primeiro?</div>
+<div class="headline"><h2>Global Rank é um sinal de demanda, não um status de entrega.</h2><p class="copy">Quanto menor o número positivo, mais alto o item na fila de demanda da empresa. Ter um Global Rank não transforma uma Initiative em um Business Case.</p></div>
+<div class="slide-body rank-layout">
+<div class="rank-ladder">
+
+<div class="rank-item">
+<div class="rank-hash">#1</div>
+<div class="rank-mid"><h3>Global Rank</h3><p class="small">Ordem de toda a empresa, validada pela liderança executiva.</p></div>
+<div class="rank-tag">Fila de demanda · menor número = mais alto</div>
+</div>
+
+<div class="rank-item">
+<div class="rank-hash">#2</div>
+<div class="rank-mid"><h3>VP Rank</h3><p class="small">Prioridade dentro de uma Requester Structure ou pilar.</p></div>
+<div class="rank-tag">Ordem local</div>
+</div>
+
+</div>
+
+<aside class="rank-aside"><span class="label">BEESIP</span><h3>Initiative priority</h3><p class="small">Contexto de entrega na Initiative do BEESIP. Não é Global Rank.</p></aside>
+
+</div>
+
+
+
+
+<p class="slide-bridge">Para pesquisa: é ao se ligar a um BC/FR que o estudo passa a ficar visível junto ao Global Rank.</p>
+
+
+<div class="source">process/global-rank-and-vp-rank.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress has-bridge slide--cascade"
+  data-number="08"
+  data-action="Falta uma peça nessa escada: o estudo. Ela entra a seguir."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 2 · Como a prioridade chega à entrega?</div>
+<div class="headline headline--compact"><h2>O rank liga a demanda à entrega sem misturar as camadas.</h2><p class="copy">Business Cases e Feature Requests carregam a prioridade de demanda. Initiatives organizam a entrega. Epics e Tasks descrevem o trabalho que os times executam.</p></div>
+<div class="slide-body cascade-ladder">
+<div class="bracket-left">Prioridade de demanda</div>
+<div class="rungs">
+
+<div class="rung">
+<div class="tag"><strong>Business Case</strong><small>BEESIMP</small></div>
+<div class="explain"><b>Problema estratégico + resultado.</b> Pode abranger várias capacidades.</div>
+</div>
+
+<div class="rung">
+<div class="tag"><strong>Feature Request</strong><small>BEESIMP</small></div>
+<div class="explain"><b>Abordagem ou lacuna específica.</b> Em geral, uma fatia avaliável.</div>
+</div>
+
+<div class="rung">
+<div class="tag"><strong>Initiative</strong><small>BEESIP</small></div>
+<div class="explain"><b>Solução com escopo e propósito claros.</b> Ciclo de vida e urgência da entrega.</div>
+</div>
+
+<div class="rung">
+<div class="tag"><strong>Epics + Tasks</strong><small>BEESIP</small></div>
+<div class="explain"><b>Trabalho específico dos times.</b> Dependências, desenvolvimento, validação e risco.</div>
+</div>
+
+</div>
+<div class="bracket-right">Organização e execução da entrega</div>
+</div>
+
+
+
+
+<p class="slide-bridge">Falta uma peça nessa escada: o estudo. Ela entra a seguir.</p>
+
+
+<div class="source">process/jira-projects-and-hierarchy.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress"
+  data-number="09"
+  data-action="O projeto mostra a que camada operacional o item pertence. Seu estudo mora em um deles e se conecta aos outros dois."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · Onde a pesquisa entra?</div>
+<div class="headline"><h2>Quem faz pesquisa trabalha em três projetos do Jira.</h2><p class="copy">O projeto mostra a que camada operacional o item pertence. Seu estudo mora em um deles e se conecta aos outros dois.</p></div>
+<div class="slide-body projects">
+
+
+
+<article class="project purple is-highlight">
+<span class="pin">A casa do seu estudo</span>
+<span class="project-code">BEESUXR</span>
+<div><span class="label">Operação de pesquisa</span><h3>Epic de pesquisa</h3>
+<ul><li>Escopo do estudo</li><li>Evidências e achados</li></ul></div>
+</article>
+
+
+
+<article class="project mint is-muted">
+
+<span class="project-code">BEESIP</span>
+<div><span class="label">Portfólio de entrega</span><h3>Initiative (parent)</h3>
+<ul><li>Contexto de roadmap</li><li>Epics de entrega filhos</li></ul></div>
+</article>
+
+
+
+<article class="project yellow is-muted">
+
+<span class="project-code">BEESIMP</span>
+<div><span class="label">Demanda e prioridade</span><h3>Business Case ou FR</h3>
+<ul><li>Global Rank</li><li>Resultado comercial</li></ul></div>
+</article>
+
+</div>
+
+
+
+
+
+
+
+<div class="source">skills/research-beesimp-linker/references/jira-linking.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress slide--link-map"
+  data-number="10"
+  data-action="Um Epic de pesquisa pode ter uma Initiative do BEESIP como parent e, separadamente, um link Discovers para o BC ou FR do BEESIMP."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · Como ligar o estudo à demanda?</div>
+<div class="headline"><h2>O vínculo de pesquisa é o <span class="accent">Discovers</span>, não o parent.</h2><p class="copy">Um Epic de pesquisa pode ter uma Initiative do BEESIP como parent e, separadamente, um link Discovers para o BC ou FR do BEESIMP.</p></div>
+<div class="slide-body slide-body--stack link-map-wrap">
+<div class="link-map">
+
+
+<article class="link-card black"><div><span class="label">Onde o estudo é gerenciado</span><h2>Hierarquia</h2></div>
+<p class="small">Epic BEESUXR<br>parent → Initiative BEESIP<br>Operação do estudo<br></p></article>
+<div class="link-arrow" aria-hidden="true"><span>Discovers</span></div>
+
+
+
+<article class="link-card yellow"><div><span class="label">Que demanda o estudo informa</span><h2>Link de impacto</h2></div>
+<p class="small">Epic BEESUXR<br>Discovers → BC/FR BEESIMP<br>Visibilidade do Global Rank<br></p></article>
+
+
+
+
+</div>
+
+
+<div class="link-warning panel pink">
+<div><span class="label">O que quebra a rastreabilidade</span><h3>Não substitua</h3></div>
+<ul><li>Não use BEESIMP como parent</li><li>Não ligue só ao BEESIP</li><li>Não confie em chave só na descrição</li></ul>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="source">skills/research-beesimp-linker/references/jira-linking.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress"
+  data-number="11"
+  data-action="A cadeia mínima de rastreabilidade tem quatro elos: escopo, parent, link de demanda e evidência com suas implicações."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · Quando o estudo está completo?</div>
+<div class="headline"><h2>Um Epic de pesquisa está completo quando outra pessoa consegue seguir o caminho até a decisão.</h2><p class="copy">A cadeia mínima de rastreabilidade tem quatro elos: escopo, parent, link de demanda e evidência com suas implicações.</p></div>
+<div class="slide-body slide-body--stack trace-chain-wrap">
+<div class="trace-chain">
+
+
+<article class="link-card purple"><span class="label">BEESUXR</span><h3>Escopo</h3><p class="small">A pergunta do estudo e o limite da evidência estão claros.</p></article>
+<span class="chain-arrow" aria-hidden="true">→</span>
+
+
+<article class="link-card mint"><span class="label">BEESIP</span><h3>Parent</h3><p class="small">O Epic está sob a Initiative que dá o contexto de entrega.</p></article>
+<span class="chain-arrow" aria-hidden="true">→</span>
+
+
+<article class="link-card yellow"><span class="label">BEESIMP</span><h3>Link de demanda</h3><p class="small">O estudo tem um Discovers para o BC ou FR que ele informa.</p></article>
+<span class="chain-arrow" aria-hidden="true">→</span>
+
+
+<article class="link-card pink"><span class="label">Resultado da pesquisa</span><h3>Evidência</h3><p class="small">Achados, limitações e implicações estão registrados onde o time pode usá-los.</p></article>
+
+
+<span class="decision-flag">Decisão</span>
+</div>
+<p class="content-strip trace-footnote">Teste rápido: alguém de fora do estudo consegue chegar à evidência a partir do BC/FR?</p>
+</div>
+
+
+
+
+
+
+
+<div class="source">skills/research-beesimp-linker/SKILL.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress"
+  data-number="12"
+  data-action="O exemplo mantém o resultado de negócio visível enquanto cada item seguinte fica menor e mais gerenciável."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · Como isso fica na prática?</div>
+<div class="headline"><h2>Exemplo: um problema comercial vira um caminho de entrega que pode ser pesquisado.</h2><p class="copy">O exemplo mantém o resultado de negócio visível enquanto cada item seguinte fica menor e mais gerenciável.</p></div>
+<div class="slide-body example-diagram">
+<div class="ex-left">
+<div class="ex-bc"><strong>BC</strong> · BEESIMP-### · Indirect Distributors PMF · Global Rank #1</div>
+<div class="ex-frs"><div class="ex-fr">FR · BEESIMP-### · Mecânica de promoção</div><div class="ex-fr">FR · BEESIMP-### · Promoção exclusiva por canal</div><div class="ex-fr">FR · BEESIMP-### · Dynamic flex balance</div></div>
+</div>
+<div class="ex-right">
+<p><strong>BEESUXR</strong> Epic — Discovers (tracejado) → BC/FR</p>
+<p><strong>BEESIP</strong> Initiative — parent → Epics/Tasks</p>
+<p class="small">BEESIP-### Initiative → Epics/Tasks executáveis</p>
+</div>
+<div class="callout">O que a evidência mudou: [uma mudança real causada pelo estudo]</div>
+</div>
+
+
+
+
+
+
+
+<div class="source">Exemplo piloto</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress"
+  data-number="13"
+  data-action="Boa higiene no Jira começa pela classificação e pela evidência — não por escolher o tipo de item mais próximo."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · O que checar antes de criar?</div>
+<div class="headline"><h2>Crie o menor item preciso que preserve o caminho da decisão.</h2><p class="copy">Boa higiene no Jira começa pela classificação e pela evidência — não por escolher o tipo de item mais próximo.</p></div>
+<div class="slide-body decision-flow">
+
+<div class="flow-step"><span class="n">1</span><div><h3>O que estou registrando?</h3><p class="small">Problema e resultado → Business Case · Abordagem ou capacidade → Feature Request · Pergunta de estudo → Epic no BEESUXR</p></div></div>
+
+<div class="flow-step"><span class="n">2</span><div><h3>O título diz qual é o trabalho?</h3></div></div>
+
+<div class="flow-step"><span class="n">3</span><div><h3>Tem parent?</h3><p class="small">Uma Initiative do BEESIP</p></div></div>
+
+<div class="flow-step"><span class="n">4</span><div><h3>Tem link Discovers?</h3><p class="small">Para o BC/FR do BEESIMP que o estudo informa</p></div></div>
+
+</div>
+<p class="flow-note">Se você também escreve BC/FR: os requisitos da solução ficam dentro dos Success Criteria.</p>
+
+
+
+
+
+
+
+<div class="source">process/jira-projects-and-hierarchy.md</div>
+</section>
+
+
+
+
+<section class="slide has-part-progress"
+  data-number="14"
+  data-action="Próximo passo: revise seus Epics de pesquisa abertos e complete parent, Discovers, evidências e limitações onde faltar. Dúvidas: [canal ou pessoa]."
+  data-owner="Research"
+  data-notes="">
+
+
+<nav class="part-progress" aria-label="Progresso">
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Por quê</div>
+
+<div class="step is-done"><span class="dot" aria-hidden="true"></span>Demanda → entrega</div>
+
+<div class="step is-active"><span class="dot" aria-hidden="true"></span>Pesquisa</div>
+
+</nav>
+
+
+
+<div class="eyebrow">Parte 3 · O que levar daqui?</div>
+<div class="headline"><h2>As cinco regras do time de Pesquisa.</h2><p class="copy">Use o Jira para preservar a conexão entre evidência, demanda, prioridade e entrega.</p></div>
+<div class="slide-body rules-close">
+
+<article class="rule-num-card"><span class="n">1</span><p>Classifique antes de criar: BC = um problema e um resultado (sem misturar resultados não relacionados) · FR = uma abordagem · estudo = Epic no BEESUXR.</p></article>
+
+<article class="rule-num-card"><span class="n">2</span><p>Dê ao estudo o parent certo: uma Initiative do BEESIP.</p></article>
+
+<article class="rule-num-card"><span class="n">3</span><p>Ligue o estudo à demanda com um Discovers para o BC/FR — não só ao BEESIP, e nunca só com a chave na descrição.</p></article>
+
+<article class="rule-num-card"><span class="n">4</span><p>Registre evidências e limitações onde o time consiga usá-las.</p></article>
+
+<article class="rule-num-card"><span class="n">5</span><p>Global Rank é sinal de demanda, não status de entrega.</p></article>
+
+</div>
+<div class="next-step-strip">Próximo passo: revise seus Epics de pesquisa abertos e complete parent, Discovers, evidências e limitações onde faltar. Dúvidas: [canal ou pessoa].</div>
+
+
+
+
+
+
+
+<div class="source">Piloto · síntese processo</div>
+</section>
+
+</main>
+<div class="notes" id="notes"></div>
+<div class="controls">← → navigate · N notes · O overview · Home / End</div>
+<div class="progress" id="progress"></div>
+<nav class="deck-nav" aria-label="Presentation controls">
+<button type="button" id="previous" aria-label="Previous slide">Previous</button>
+<button type="button" id="next" aria-label="Next slide">Next</button>
+<button type="button" id="overview" aria-label="Show slide overview">Overview</button>
+<button type="button" id="toggle-notes" aria-label="Show presenter notes">Notes</button>
+</nav>
+<script>
+const slides=[...document.querySelectorAll(".slide")];
+const notes=document.getElementById("notes");
+const progress=document.getElementById("progress");
+const previous=document.getElementById("previous");
+const next=document.getElementById("next");
+const overview=document.getElementById("overview");
+const toggleNotes=document.getElementById("toggle-notes");
+let current=0;
+function show(index, updateHash=true){
+  current=(index+slides.length)%slides.length;
+  slides.forEach((slide,i)=>{
+    const hidden=i!==current;
+    slide.classList.toggle("active",!hidden);
+    slide.inert=hidden;
+    slide.setAttribute("aria-hidden",String(hidden));
+    slide.setAttribute("tabindex","-1");
+    slide.setAttribute("role","group");
+    slide.setAttribute("aria-label",`Slide ${i+1} of ${slides.length}`);
+  });
+  notes.textContent=slides[current].dataset.notes||"";
+  progress.style.width=`${((current+1)/slides.length)*100}%`;
+  if(updateHash) history.replaceState(null,"",`#${current+1}`);
+  slides[current].focus({preventScroll:true});
+}
+function fromHash(){
+  const value=Number(location.hash.slice(1));
+  return Number.isFinite(value)&&value>0?value-1:0;
+}
+function setOverview(enabled){
+  document.body.classList.toggle("overview",enabled);
+  if(enabled) overview.focus();
+  else slides[current].focus({preventScroll:true});
+}
+function setNotes(enabled){
+  document.body.classList.toggle("show-notes",enabled);
+  if(enabled){
+    notes.setAttribute("tabindex","-1");
+    notes.focus({preventScroll:true});
+  }else toggleNotes.focus();
+}
+document.addEventListener("keydown",event=>{
+  if(["ArrowRight","PageDown"," "].includes(event.key)){event.preventDefault();show(current+1)}
+  if(["ArrowLeft","PageUp"].includes(event.key)){event.preventDefault();show(current-1)}
+  if(event.key==="Home"){event.preventDefault();show(0)}
+  if(event.key==="End"){event.preventDefault();show(slides.length-1)}
+  if(event.key.toLowerCase()==="n"){event.preventDefault();setNotes(!document.body.classList.contains("show-notes"))}
+  if(event.key.toLowerCase()==="o"){event.preventDefault();setOverview(!document.body.classList.contains("overview"))}
+});
+slides.forEach((slide,index)=>slide.addEventListener("click",()=>{if(document.body.classList.contains("overview")){setOverview(false);show(index)}}));
+previous.addEventListener("click",()=>show(current-1));
+next.addEventListener("click",()=>show(current+1));
+overview.addEventListener("click",()=>setOverview(!document.body.classList.contains("overview")));
+toggleNotes.addEventListener("click",()=>setNotes(!document.body.classList.contains("show-notes")));
+window.addEventListener("hashchange",()=>show(fromHash(),false));
+show(fromHash(),false);
+</script>
+</body>
+</html>
