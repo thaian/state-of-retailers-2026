@@ -1,5 +1,5 @@
-# Jira process pilot (PT)
+# Jira para Pesquisadores
 
-Standalone RDS export — [index.html](./index.html)
+Deck PT — [index.html](./index.html)
 
-Build: <meta name="rds-build" content="2026-09-24T15:22Z">
+Build: 2026-09-24T15:25Z
