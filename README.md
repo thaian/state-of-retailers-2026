@@ -7,3 +7,4 @@ Internal BEES research prototype. Live page:
 Unlisted gist (same HTML): https://gist.github.com/thaian/0f3ca5f7538c4f8fba211b50427316f7
 
 Not an official product. Findings are from published BEESPKM literature.
+- [Jira process pilot — Research Deck Studio](./decks/jira-process-pilot/)
